@@ -1,6 +1,6 @@
 var bgImg = document.createElement("img");
 
-bgiImg.src="images/map.png";
+bgImg.src="images/map.png";
 
 var canvas = document.getElementByld("game-canvas");
 
