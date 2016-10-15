@@ -6,13 +6,11 @@ var canvas = document.getElementById("game-canvas");
 
 var ctx = canvas.getContext("2d");
 
-function draw(){
-  ctx.drawImage(bgImg,0,0);
-}
+
 
 //setTimeout(draw,1000);
 
-setInterval(draw,16);
+
 
 
 /*var chaImg = document.createElement("img2");
@@ -32,18 +30,26 @@ setTimeout(draw2,1000);
 //setInterval(draw2,16);
 */
 
-var enemyImg = document.createElement("imgEnemy");
+var enemyImg = document.createElement("img");
 
 enemyImg.src="images/rukia.gif";
 
-var canvasEnemy = document.getElementById("enemy");
+/*var canvasEnemy = document.getElementById("enemy");
 
-var ctxEnemy = canvasEnemy.getContext("2d");
-
-function drawEnemy(){
-  ctxEnemy.drawImage(enemyImg,100,100);
+var ctx = canvasEnemy.getContext("2d");
+*/
+/*function drawEnemy(){
+  ctxEnemy.drawImage(enemyImg,0,0);
 }
 
 //setTimeout(draw,1000);
 
 setInterval(drawEnemy,16);
+*/
+
+function draw(){
+  ctx.drawImage(bgImg,0,0);
+  ctx.drawImage(enemyImg,0,0);
+}
+
+setInterval(draw,16);
