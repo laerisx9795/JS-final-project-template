@@ -50,7 +50,7 @@ setInterval(drawEnemy,16);
 function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(chaImg,100,100);
-  ctx.drawImage(enemyImg,200,200);
+  ctx.drawImage(enemyImg,400,400);
 }
 
 setInterval(draw,16);
