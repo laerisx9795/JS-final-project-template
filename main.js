@@ -13,19 +13,3 @@ function draw(){
 //setTimeout(draw,1000);
 
 setInterval(draw,16);
-
-
-/*var chaImg = document.createElement("img");
-
-chaImg.src="images/jason.gif";
-
-var canvas = document.getElementById("krkt");
-
-var ctx = canvas.getContext("2d");
-
-function draw2(){
-  ctx.drawImage(chaImg,0,0);
-}
-
-setInterval(draw2,16);
-*/
