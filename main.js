@@ -46,10 +46,17 @@ var ctx = canvasEnemy.getContext("2d");
 
 setInterval(drawEnemy,16);
 */
+var XXX =0;
+var YYY =0;
+
+for(var i=0; i<200; i++){
+  XXX++;
+  YYY++;
+}
 
 var Jason={
-  x:100,
-  y:100
+  x:XXX,
+  y:YYY
 };
 
 function draw(){
