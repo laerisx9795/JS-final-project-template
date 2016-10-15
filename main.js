@@ -15,7 +15,7 @@ function draw(){
 setInterval(draw,16);
 
 
-var chaImg = document.createElement("img2");
+/*var chaImg = document.createElement("img2");
 
 chaImg.src="images/jason.gif";
 
@@ -30,3 +30,20 @@ function draw2(){
 setTimeout(draw2,1000);
 
 //setInterval(draw2,16);
+*/
+
+var enemyImg = document.createElement("imgEnemy");
+
+enemyImg.src="images/rukia.gif";
+
+var canvasEnemy = document.getElementById("enemy");
+
+var ctxEnemy = canvasEnemy.getContext("2d");
+
+function drawEnemy(){
+  ctxEnemy.drawImage(enemyImg,100,100);
+}
+
+//setTimeout(draw,1000);
+
+setInterval(drawEnemy,16);
