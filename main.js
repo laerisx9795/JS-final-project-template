@@ -13,11 +13,11 @@ var ctx = canvas.getContext("2d");
 
 
 
-/*var chaImg = document.createElement("img2");
+var chaImg = document.createElement("img");
 
 chaImg.src="images/jason.gif";
 
-var canvas2 = document.getElementById("krkt");
+/*var canvas2 = document.getElementById("krkt");
 
 var ctx2 = canvas2.getContext("2d");
 
@@ -49,7 +49,8 @@ setInterval(drawEnemy,16);
 
 function draw(){
   ctx.drawImage(bgImg,0,0);
-  ctx.drawImage(enemyImg,0,0);
+  ctx.drawImage(chaImg,100,90);
+  ctx.drawImage(enemyImg,100,100);
 }
 
 setInterval(draw,16);
