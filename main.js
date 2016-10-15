@@ -27,6 +27,6 @@ function draw2(){
   ctx2.drawImage(chaImg,30,30);
 }
 
-setTimeout(draw,1000);
+setTimeout(draw2,1000);
 
 //setInterval(draw2,16);
