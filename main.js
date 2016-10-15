@@ -15,7 +15,7 @@ function draw(){
 setInterval(draw,16);
 
 
-var chaImg = document.createElement("img");
+/*var chaImg = document.createElement("img");
 
 chaImg.src="images/jason.gif";
 
@@ -28,3 +28,4 @@ function draw2(){
 }
 
 setInterval(draw2,16);
+*/
