@@ -47,9 +47,14 @@ var ctx = canvasEnemy.getContext("2d");
 setInterval(drawEnemy,16);
 */
 
+var Jason={
+  x:100,
+  y:100
+};
+
 function draw(){
   ctx.drawImage(bgImg,0,0);
-  ctx.drawImage(chaImg,100,100);
+  ctx.drawImage(chaImg,Jason.x,Jason.y);
   ctx.drawImage(enemyImg,400,400);
 }
 
