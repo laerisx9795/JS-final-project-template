@@ -48,13 +48,13 @@ setInterval(drawEnemy,16);
 */
 
 var Jason={
-  x:30,
-  y:40
+  x:200,
+  y:50
 };
 
 var enemy={
-  x:96,
-  y:480-32
+  x:345,
+  y:50
 };
 
 function draw(){
