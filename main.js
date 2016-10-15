@@ -24,7 +24,7 @@ var canvas2 = document.getElementById("krkt");
 var ctx = canvas2.getContext("2d");
 
 function draw2(){
-  ctx.drawImage(chaImg,0,0);
+  ctx.drawImage(chaImg,10,20);
 }
 
 //setTimeout(draw,1000);
