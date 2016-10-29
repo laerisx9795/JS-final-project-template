@@ -90,6 +90,7 @@ var isBuilding = false;
 var tower = {};
 var cursor = {};
 $("#game-canves").on("click", function(){
+  alert("True");
   if(isCollided(cursor.x, cursor.y, 590, 430, 50, 50)){
     if(isBuilding){
       isBuilding=false;
@@ -104,7 +105,7 @@ function draw(){
   //ctx.drawImage(chaImg,Jason.x,Jason.y);
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
   ctx.drawImage(btnImg,btn.x,btn.y,50,50);
-  //ctx.drawImage(twrImg,tower.x,tower.y,20,20);
+  ctx.drawImage(twrImg,tower.x,tower.y,20,20);
 }
 
 setInterval(draw,16);
