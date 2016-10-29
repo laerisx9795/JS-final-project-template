@@ -13,11 +13,11 @@ var ctx = canvas.getContext("2d");
 
 
 
-var chaImg = document.createElement("img");
+/*var chaImg = document.createElement("img");
 
 chaImg.src="images/jason.gif";
 
-/*var canvas2 = document.getElementById("krkt");
+var canvas2 = document.getElementById("krkt");
 
 var ctx2 = canvas2.getContext("2d");
 
@@ -55,14 +55,14 @@ var twrImg = document.createElement("img");
 
 twrImg.src="images/tower.png";
 
-var Jason={
+/*var Jason={
   x:200,
   y:50
-};
+};*/
 
 var enemy={
-  x:345,
-  y:50
+  x:96,
+  y:480
 };
 
 var btn={
@@ -81,7 +81,7 @@ $("#game-canves").on("mousemove", function(event){
 function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight){
   if(pointX >= targetX && pointX <= targetX + targetWidth && pointY >= targetY && pointY <= targetY + targetHeight){
     return true;
-  }esle{
+  }else{
     return false;
   }
 }
@@ -101,7 +101,7 @@ $("#game-canves").on("click", function(){
 
 function draw(){
   ctx.drawImage(bgImg,0,0);
-  ctx.drawImage(chaImg,Jason.x,Jason.y);
+  //ctx.drawImage(chaImg,Jason.x,Jason.y);
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
   ctx.drawImage(btnImg,btn.x,btn.y,50,50);
   //ctx.drawImage(twrImg,tower.x,tower.y,20,20);
@@ -109,5 +109,5 @@ function draw(){
 
 setInterval(draw,16);
 
+//點擊按鈕 讓防禦塔跟著游標移動
 //點擊任意位置 建立防禦塔
-//讓防禦塔跟著游標移動
