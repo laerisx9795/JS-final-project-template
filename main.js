@@ -97,7 +97,7 @@ $("#game-canves").on("click", function(){
       isBuilding=true;
     }
   }
-}
+)}
 
 function draw(){
   ctx.drawImage(bgImg,0,0);
