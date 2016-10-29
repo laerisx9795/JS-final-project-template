@@ -67,7 +67,8 @@ var enemy={
   speedx:50 ,
   speedy:50 ,
   move: function(){
-          
+          this.x=
+          this.y=
         }*/
 };
 
@@ -78,10 +79,10 @@ var btn={
 
 //游標
 $("#game-canvas").on("mousemove", function(event){
-    cursor = {
-      x:event.offsetX,
-      y:event.offsetY
-    };
+  cursor = {
+    x:event.offsetX,
+    y:event.offsetY
+  };
 });
 
 function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight){
@@ -113,6 +114,9 @@ function draw(){
   //ctx.drawImage(chaImg,Jason.x,Jason.y);
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
   ctx.drawImage(btnImg,btn.x,btn.y,50,50);
+  if(isBuilding){
+    ctx.drawImage(twrImg,cursor.x,cursor.y,20,20);
+  }
   ctx.drawImage(twrImg,tower.x,tower.y,20,20);
 }
 
