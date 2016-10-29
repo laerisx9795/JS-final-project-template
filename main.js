@@ -122,7 +122,9 @@ function draw(){
   if(isBuilding){
     ctx.drawImage(twrImg,cursor.x,cursor.y,20,20);
   }
-  ctx.drawImage(twrImg,tower.x,tower.y,20,20);
+  if(isBuilding==true&&isCollided==false){
+    ctx.drawImage(twrImg,tower.x,tower.y,20,20);
+  }
 }
 
 setInterval(draw,16);
