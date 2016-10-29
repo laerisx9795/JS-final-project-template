@@ -76,7 +76,7 @@ function draw(){
 setInterval(draw,16);
 
 //游標
-$("#game-canves").on("mousemove", function(event){
+/*$("#game-canves").on("mousemove", function(event){
   corsor={
     x:event.offsetX,
     y:event.offsetY
@@ -101,3 +101,4 @@ $("#game-canves").on("click", function(){
 if(isBuilding &&()){
   tower.x
 }
+*/
