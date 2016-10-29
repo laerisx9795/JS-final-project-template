@@ -78,8 +78,10 @@ var btn={
 
 //游標
 $("#game-canvas").on("mousemove", function(event){
-    x:event.offsetX,
-    y:event.offsetY
+    cursor = {
+      x:event.offsetX,
+      y:event.offsetY
+    };
 });
 
 function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight){
@@ -92,15 +94,12 @@ function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight)
 
 var isBuilding = false;
 var tower = {};
-var cursor = {
-      x:event.offsetX,
-      y:event.offsetY
-};
+var cursor = {};
 $("#game-canvas").on("click", function(){
   if(isCollided(cursor.x, cursor.y, 590, 430, 50, 50)== true){
     isBuilding=true;
     if(isBuilding==true){
-      tower.x=event.offsetX,
+      tower.x=event.offsetX;
       tower.y=event.offsetY;
     }
   }else{
