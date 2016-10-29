@@ -60,15 +60,16 @@ twrImg.src="images/tower.png";
   y:50
 };*/
 
+var FPS=60;
 var enemy={
   x:96,
   y:450,
   /*
-  speedx:50 ,
-  speedy:50 ,
+  speedx:0 ,
+  speedy:-64 ,
   move: function(){
-          this.x=
-          this.y=
+          this.x=this.x+this.speedx/FPS;
+          this.y=this.y+this.speedy/FPS;
         }*/
 };
 
