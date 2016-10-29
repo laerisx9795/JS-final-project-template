@@ -1,58 +1,40 @@
 var bgImg = document.createElement("img");
-
 bgImg.src="images/map.png";
 
 var canvas = document.getElementById("game-canvas");
-
 var ctx = canvas.getContext("2d");
-
-
 
 //setTimeout(draw,1000);
 
-
-
-
 /*var chaImg = document.createElement("img");
-
 chaImg.src="images/jason.gif";
 
 var canvas2 = document.getElementById("krkt");
-
 var ctx2 = canvas2.getContext("2d");
-
 function draw2(){
   ctx2.drawImage(chaImg,30,30);
 }
-
 setTimeout(draw2,1000);
-
-//setInterval(draw2,16);
+setInterval(draw2,16);
 */
 
 var enemyImg = document.createElement("img");
-
 enemyImg.src="images/rukia.gif";
 
 /*var canvasEnemy = document.getElementById("enemy");
-
 var ctx = canvasEnemy.getContext("2d");
 */
 /*function drawEnemy(){
   ctxEnemy.drawImage(enemyImg,0,0);
 }
-
-//setTimeout(draw,1000);
-
+setTimeout(draw,1000);
 setInterval(drawEnemy,16);
 */
 
 var btnImg = document.createElement("img");
-
 btnImg.src="images/tower-btn.png";
 
 var twrImg = document.createElement("img");
-
 twrImg.src="images/tower.png";
 
 /*var Jason={
@@ -123,9 +105,7 @@ function draw(){
   if(isBuilding){
     ctx.drawImage(twrImg,cursor.x,cursor.y,20,20);
   }
-  if(isCollided==false && isBuilding==true){
     ctx.drawImage(twrImg,tower.x,tower.y,20,20);
-  }
 }
 
 setInterval(draw,16);
