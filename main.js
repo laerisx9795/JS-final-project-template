@@ -62,7 +62,13 @@ twrImg.src="images/tower.png";
 
 var enemy={
   x:96,
-  y:450
+  y:450,
+  /*
+  speedx:50 ,
+  speedy:50 ,
+  move: function(){
+          
+        }*/
 };
 
 var btn={
@@ -90,17 +96,19 @@ var isBuilding = false;
 var tower = {};
 var cursor = {};
 $("#game-canvas").on("click", function(){
-  if(isCollided(cursor.x, cursor.y, 590, 430, 50, 50)){
-    alert("True");
-    if(isBuilding){
-      isBuilding=false;
-    }else{
-      isBuilding=true;
+  if(isCollided(cursor.x, cursor.y, 590, 430, 50, 50)== true){
+    isBuilding=true;
+    if(isBuilding==true){
+      tower.x=cursor.x;
+      tower.y=cursor.y;
     }
+  }else{
+    isBuilding=false;
   }
 });
 
 function draw(){
+  //enemy.move();
   ctx.drawImage(bgImg,0,0);
   //ctx.drawImage(chaImg,Jason.x,Jason.y);
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
