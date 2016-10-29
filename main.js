@@ -70,16 +70,6 @@ var btn={
   y:430
 }
 
-function draw(){
-  ctx.drawImage(bgImg,0,0);
-  ctx.drawImage(chaImg,Jason.x,Jason.y);
-  ctx.drawImage(enemyImg,enemy.x,enemy.y);
-  ctx.drawImage(btnImg,btn.x,btn.y,50,50);
-  ctx.drawImage(twrImg,tower.x,tower.y,20,20);
-}
-
-setInterval(draw,16);
-
 //游標
 $("#game-canves").on("mousemove", function(event){
   cursor={
@@ -96,7 +86,6 @@ function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight)
   }
 }
 
-
 var isBuilding = false;
 var tower = {};
 var cursor = {};
@@ -109,3 +98,16 @@ $("#game-canves").on("click", function(){
     }
   }
 }
+
+function draw(){
+  ctx.drawImage(bgImg,0,0);
+  ctx.drawImage(chaImg,Jason.x,Jason.y);
+  ctx.drawImage(enemyImg,enemy.x,enemy.y);
+  ctx.drawImage(btnImg,btn.x,btn.y,50,50);
+  //ctx.drawImage(twrImg,tower.x,tower.y,20,20);
+}
+
+setInterval(draw,16);
+
+//點擊任意位置 建立防禦塔
+//讓防禦塔跟著游標移動
