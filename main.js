@@ -76,8 +76,8 @@ function draw(){
 setInterval(draw,16);
 
 //游標
-/*$("#game-canves").on("mousemove", function(event){
-  corsor={
+$("#game-canves").on("mousemove", function(event){
+  cursor={
     x:event.offsetX,
     y:event.offsetY
   };
@@ -85,20 +85,22 @@ setInterval(draw,16);
 
 var isBuilding = false;
 var tower = {};
-var ccursor = {};
+var cursor = {};
 $("#game-canves").on("click", function(){
   if(isCollided(cursor.x, cursor.y, 590, 430, 50, 50)){
     if(isBuilding){
       isBuilding=false;
     }else{
-      
+      isBuilding=true;
     }
   }
 }
 
 
-
-if(isBuilding &&()){
-  tower.x
+function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight){
+  if(pointX >= targetX && pointX <= targetX + targetWidth && pointY >= targetY && pointY <= targetY + targetHeight){
+    return true;
+  }esle{
+    return false;
+  }
 }
-*/
