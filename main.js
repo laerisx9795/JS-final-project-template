@@ -62,17 +62,25 @@ var enemy={
 };
 
 var btn={
-  x:500,
-  y:200
+  x:600,
+  y:400
 }
 
 function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(chaImg,Jason.x,Jason.y);
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
-  ctx.drawImage(btnImg,btn.x,btn.y,20,20);
+  ctx.drawImage(btnImg,btn.x,btn.y,50,50);
 }
 
 setInterval(draw,16);
 
+$("#target").mousemove(function(event){
+  console.log("x:"+event.offsetX+",y:"+event.offsetY);
+})
+
 var tower = {};
+
+if(isBuilding &&()){
+  tower.x
+}
