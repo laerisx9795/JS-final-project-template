@@ -61,7 +61,7 @@ twrImg.src="images/tower.png";
 };*/
 
 var enemy={
-  x:98,
+  x:96,
   y:450
 };
 
@@ -89,7 +89,7 @@ function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight)
 var isBuilding = false;
 var tower = {};
 var cursor = {};
-$("#game-canves").on("click", function(){
+$("#game-canvas").on("click", function(){
   alert("True");
   if(isCollided(cursor.x, cursor.y, 590, 430, 50, 50)){
     if(isBuilding){
