@@ -108,6 +108,7 @@ $("#game-canvas").on("click", function(){
     if(isBuilding==true){
       tower.x=event.offsetX;
       tower.y=event.offsetY;
+      $("#game-canvas").on("click",draw());
     }else{
       isBuilding=false;
     }
