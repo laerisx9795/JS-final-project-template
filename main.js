@@ -51,6 +51,10 @@ var btnImg = document.createElement("img");
 
 btnImg.src="images/tower-btn.png";
 
+var twrImg = document.createElement("img");
+
+twrImg.src="images/tower.png";
+
 var Jason={
   x:200,
   y:50
@@ -71,6 +75,7 @@ function draw(){
   ctx.drawImage(chaImg,Jason.x,Jason.y);
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
   ctx.drawImage(btnImg,btn.x,btn.y,50,50);
+  ctx.drawImage(twrImg,tower.x,tower.y,20,20);
 }
 
 setInterval(draw,16);
@@ -83,6 +88,15 @@ $("#game-canves").on("mousemove", function(event){
   };
 });
 
+function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight){
+  if(pointX >= targetX && pointX <= targetX + targetWidth && pointY >= targetY && pointY <= targetY + targetHeight){
+    return true;
+  }esle{
+    return false;
+  }
+}
+
+
 var isBuilding = false;
 var tower = {};
 var cursor = {};
@@ -92,15 +106,8 @@ $("#game-canves").on("click", function(){
       isBuilding=false;
     }else{
       isBuilding=true;
+      tower.x=cursor.x;
+      tower.y=cursor.y;
     }
-  }
-}
-
-
-function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight){
-  if(pointX >= targetX && pointX <= targetX + targetWidth && pointY >= targetY && pointY <= targetY + targetHeight){
-    return true;
-  }esle{
-    return false;
   }
 }
