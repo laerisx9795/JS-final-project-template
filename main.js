@@ -47,6 +47,10 @@ var ctx = canvasEnemy.getContext("2d");
 setInterval(drawEnemy,16);
 */
 
+var btnImg = document.createElement("img");
+
+btnImg.src="images/tower-btn.png";
+
 var Jason={
   x:200,
   y:50
@@ -61,6 +65,7 @@ function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(chaImg,Jason.x,Jason.y);
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
+  ctx.drawImage(btnImg,640,480,20,20);
 }
 
 setInterval(draw,16);
