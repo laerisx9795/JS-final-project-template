@@ -61,11 +61,18 @@ var enemy={
   y:50
 };
 
+var btn={
+  x:500,
+  y:200
+}
+
 function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(chaImg,Jason.x,Jason.y);
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
-  ctx.drawImage(btnImg,640,480,20,20);
+  ctx.drawImage(btnImg,btn.x,btn.y,20,20);
 }
 
 setInterval(draw,16);
+
+var tower = {};
