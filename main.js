@@ -106,8 +106,6 @@ $("#game-canves").on("click", function(){
       isBuilding=false;
     }else{
       isBuilding=true;
-      tower.x=cursor.x;
-      tower.y=cursor.y;
     }
   }
 }
