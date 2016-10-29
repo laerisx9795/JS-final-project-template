@@ -99,8 +99,8 @@ $("#game-canvas").on("click", function(){
   if(isCollided(cursor.x, cursor.y, 590, 430, 50, 50)== true){
     isBuilding=true;
     if(isBuilding==true){
-      tower.x=cursor.x;
-      tower.y=cursor.y;
+      tower.x=event.offsetX,
+      tower.y=event.offsetY;
     }
   }else{
     isBuilding=false;
