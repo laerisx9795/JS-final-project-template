@@ -71,7 +71,7 @@ var btn={
 }
 
 //游標
-$("#game-canves").on("mousemove", function(event){
+$("#game-canvas").on("mousemove", function(event){
   cursor={
     x:event.offsetX,
     y:event.offsetY
