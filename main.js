@@ -122,10 +122,10 @@ function draw(){
   if(isBuilding){
     ctx.drawImage(twrImg,cursor.x,cursor.y,20,20);
   }
-  //ctx.drawImage(twrImg,tower.x,tower.y,20,20);
+  ctx.drawImage(twrImg,tower.x,tower.y,20,20);
 }
 
 setInterval(draw,16);
 
-//點擊按鈕 讓防禦塔跟著游標移動
 //點擊任意位置 建立防禦塔
+//使敵人移動 並設定移動速度 改變座標
