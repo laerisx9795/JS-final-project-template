@@ -62,8 +62,8 @@ var enemy={
 };
 
 var btn={
-  x:600,
-  y:400
+  x:590,
+  y:430
 }
 
 function draw(){
@@ -75,11 +75,28 @@ function draw(){
 
 setInterval(draw,16);
 
-$("#target").mousemove(function(event){
-  console.log("x:"+event.offsetX+",y:"+event.offsetY);
-})
+//游標
+$("#game-canves").on("mousemove", function(event){
+  corsor={
+    x:event.offsetX,
+    y:event.offsetY
+  };
+});
 
+var isBuilding = false;
 var tower = {};
+var ccursor = {};
+$("#game-canves").on("click", function(){
+  if(isCollided(cursor.x, cursor.y, 590, 430, 50, 50)){
+    if(isBuilding){
+      isBuilding=false;
+    }else{
+      
+    }
+  }
+}
+
+
 
 if(isBuilding &&()){
   tower.x
