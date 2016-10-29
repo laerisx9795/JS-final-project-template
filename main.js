@@ -61,7 +61,7 @@ twrImg.src="images/tower.png";
 };*/
 
 var enemy={
-  x:100,
+  x:98,
   y:450
 };
 
