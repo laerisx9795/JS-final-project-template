@@ -90,8 +90,8 @@ var isBuilding = false;
 var tower = {};
 var cursor = {};
 $("#game-canvas").on("click", function(){
-  alert("True");
   if(isCollided(cursor.x, cursor.y, 590, 430, 50, 50)){
+    alert("True");
     if(isBuilding){
       isBuilding=false;
     }else{
