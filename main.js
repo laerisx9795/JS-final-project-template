@@ -104,7 +104,12 @@ $("#game-canvas").on("click", function(){
       tower.y=event.offsetY;
     }
   }else{
-    isBuilding=false;
+    if(isBuilding==true){
+      tower.x=event.offsetX;
+      tower.y=event.offsetY;
+    }else{
+      isBuilding=false;
+    }
   }
 });
 
