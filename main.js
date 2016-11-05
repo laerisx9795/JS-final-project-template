@@ -82,10 +82,12 @@ var enemy={
             }else{
               this.speedx = 0;
               this.speedy = 64;
+            }
           }
           this.x=this.x+this.speedx/FPS;
           this.y=this.y+this.speedy/FPS;  //speedy/FPS 速度/每秒改變張數 每秒改變距離
         }
+}
 
 var btn={
   x:590,
