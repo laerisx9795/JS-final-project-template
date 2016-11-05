@@ -63,8 +63,8 @@ var enemy={
   pathDes: 0,
   move: function(){
           if(isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,this.speed/FPS,this.speed/FPS)){
-                        //目標路徑點.x            ,目標路徑點.y              ,現在.x, 現在.y,移動大小      ,移動大小
-            console.log("gogogo")
+            //          目標路徑點.x              ,目標路徑點.y              ,現在.x, 現在.y,移動大小      ,移動大小
+            console.log("true")
           }
           this.x=this.x+this.speedx/FPS;
           this.y=this.y+this.speedy/FPS;  //speedy/FPS 速度/每秒改變張數 每秒改變距離
