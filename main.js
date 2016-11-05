@@ -63,8 +63,25 @@ var enemy={
   pathDes: 0,
   move: function(){
           if(isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,this.speed/FPS,this.speed/FPS)){
-            //          目標路徑點.x              ,目標路徑點.y              ,現在.x, 現在.y,移動大小      ,移動大小
-            console.log("true")
+            //          目標路徑點.x              ,目標路徑點.y              ,現在.x, 現在.y,偵測範圍大小  ,偵測範圍大小
+            //console.log("true")
+            //把史萊姆移到目標路徑點上 改變speedx和speedy 行進方向 以及下一個目標路徑點
+            this.x=enemyPath[this.pathDes].x;
+            this.y=enemyPath[this.pathDes].y;
+            this.pathDes++;
+            enemyPath[this.pathDes];
+            if(this.x>enemyPath[this.pathDes].x){
+              this.speedx = -64;
+              this.speedy = 0;
+            }else if(this.x<enemyPath[this.pathDes].x){
+              this.speedx = 64;
+              this.speedy = 0;
+            }else if(this.y>enemyPath[this.pathDes].y){
+              this.speedx = 0;
+              this.speedy = -64;
+            }else{
+              this.speedx = 0;
+              this.speedy = 64;
           }
           this.x=this.x+this.speedx/FPS;
           this.y=this.y+this.speedy/FPS;  //speedy/FPS 速度/每秒改變張數 每秒改變距離
