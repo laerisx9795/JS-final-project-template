@@ -46,11 +46,11 @@ var FPS=60;
 var enemy={
   x:96,
   y:450,
-  speedx:0 ,
+  speedx:0 ,  //設定速度
   speedy:-64 ,
   move: function(){
           this.x=this.x+this.speedx/FPS;
-          this.y=this.y+this.speedy/FPS;
+          this.y=this.y+this.speedy/FPS;  //speedy/FPS 速度/每秒改變張數 每秒改變距離
         }
 };
 
@@ -86,8 +86,8 @@ $("#game-canvas").on("click", function(){
       isBuilding=true;
     }
   }else if(isBuilding==true){
-      tower.x=cursor.x;
-      tower.y=cursor.y;
+      tower.x=cursor.x%32;
+      tower.y=cursor.y%32;
       isBuilding=false;
   }
 });
@@ -107,4 +107,3 @@ function draw(){
 setInterval(draw,16);
 
 //只能建在格子上
-//使敵人移動 並設定移動速度 改變座標
