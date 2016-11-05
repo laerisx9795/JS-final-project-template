@@ -80,10 +80,10 @@ var isBuilding = false;
 var tower = {};
 var cursor = {};
 $("#game-canvas").on("click", function(){
-  if(isCollided(cursor.x, cursor.y, 590, 430, 50, 50)== true){
+  if(isCollided(cursor.x, cursor.y, 590, 430, 50, 50)== true){ //判斷點擊位置是否在按鈕內
     isBuilding=true;
     if(isBuilding==true){
-      tower.x=event.offsetX;
+      tower.x=event.offsetX; //
       tower.y=event.offsetY;
     }
   }else{
@@ -111,4 +111,5 @@ function draw(){
 setInterval(draw,16);
 
 //點擊任意位置 建立防禦塔
+//只能建在格子上
 //使敵人移動 並設定移動速度 改變座標
