@@ -99,9 +99,9 @@ function draw(){
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
   ctx.drawImage(btnImg,btn.x,btn.y,50,50);
   if(isBuilding){
-    ctx.drawImage(twrImg,cursor.x,cursor.y,20,20);
+    ctx.drawImage(twrImg,cursor.x,cursor.y,32,32);
   }
-    ctx.drawImage(twrImg,tower.x,tower.y,20,20);
+    ctx.drawImage(twrImg,tower.x,tower.y,32,32);
 }
 
 setInterval(draw,16);
