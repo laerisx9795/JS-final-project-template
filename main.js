@@ -93,7 +93,7 @@ $("#game-canvas").on("click", function(){
 });
 
 function draw(){
-  enemy.move();
+  //enemy.move();
   ctx.drawImage(bgImg,0,0);
   //ctx.drawImage(chaImg,Jason.x,Jason.y);
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
