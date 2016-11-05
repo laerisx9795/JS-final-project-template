@@ -19,7 +19,7 @@ setInterval(draw2,16);
 */
 
 var enemyImg = document.createElement("img");
-enemyImg.src="images/rukia.gif";
+enemyImg.src="images/slime.gif";
 
 /*var canvasEnemy = document.getElementById("enemy");
 var ctx = canvasEnemy.getContext("2d");
