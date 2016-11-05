@@ -80,17 +80,15 @@ var isBuilding = false;
 var tower = {};
 var cursor = {};
 $("#game-canvas").on("click", function(){
-  if(isCollided(cursor.x, cursor.y, 590, 430, 50, 50)== true){ //判斷點擊位置是否在按鈕內
-    isBuilding=true;
-    if(isBuilding==true){
-      tower.x=event.offsetX; //
-      tower.y=event.offsetY;
-    }
-  }else{
-    if(isBuilding==true){
-      tower.x=event.offsetX;
-      tower.y=event.offsetY;
+  if(isCollided(cursor.x, cursor.y, 590, 430, 50, 50)){ //判斷點擊位置是否在按鈕內
+    if(isBuilding){
+      isBuilding=false; //再點一次取消
     }else{
+      isBuilding=true;
+    }
+  }else if(isBuilding==true){
+      tower.x=cursor.x;
+      tower.y=cursor.y;
       isBuilding=false;
     }
   }
