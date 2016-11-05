@@ -46,13 +46,12 @@ var FPS=60;
 var enemy={
   x:96,
   y:450,
-  /*
   speedx:0 ,
   speedy:-64 ,
   move: function(){
           this.x=this.x+this.speedx/FPS;
           this.y=this.y+this.speedy/FPS;
-        }*/
+        }
 };
 
 var btn={
@@ -107,6 +106,5 @@ function draw(){
 
 setInterval(draw,16);
 
-//點擊任意位置 建立防禦塔
 //只能建在格子上
 //使敵人移動 並設定移動速度 改變座標
