@@ -90,7 +90,6 @@ $("#game-canvas").on("click", function(){
       tower.x=cursor.x;
       tower.y=cursor.y;
       isBuilding=false;
-    }
   }
 });
 
