@@ -134,7 +134,7 @@ var clock=0;
 if((clock%80)==0){
   var newEnemy = new Enemy();
   enemies.push(newEnemy);
-  console.log("true");
+  console.log(clock);
 }
 
 
