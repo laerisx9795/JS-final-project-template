@@ -134,6 +134,7 @@ var clock=0;
 if((clock%80)==0){
   var newEnemy = new Enemy();
   enemies.push(newEnemy);
+  console.log("true");
 }
 
 
@@ -176,7 +177,7 @@ $("#game-canvas").on("click", function(){
 });
 
 function draw(){
-  enemy.move();
+  Enemy.move();
   ctx.drawImage(bgImg,0,0);
   //ctx.drawImage(chaImg,Jason.x,Jason.y);
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
