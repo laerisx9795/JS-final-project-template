@@ -123,7 +123,7 @@ function Enemy(){
           this.y=this.y+this.speedy/FPS;  //speedy/FPS 速度/每秒改變張數 每秒改變距離
         }
 }
-//var enemy=new Enemy();
+var enemy=new Enemy();
 var enemies =[];
 
 //紀錄遊戲時間
@@ -177,7 +177,7 @@ $("#game-canvas").on("click", function(){
 });
 
 function draw(){
-  Enemy.move();
+  enemy.move();
   ctx.drawImage(bgImg,0,0);
   //ctx.drawImage(chaImg,Jason.x,Jason.y);
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
