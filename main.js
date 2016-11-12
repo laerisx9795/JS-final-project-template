@@ -122,7 +122,7 @@ function Enemy(){
           this.x=this.x+this.speedx/FPS;
           this.y=this.y+this.speedy/FPS;  //speedy/FPS 速度/每秒改變張數 每秒改變距離
         }
-};
+}
 
 var enemy=new Enemy();
 
