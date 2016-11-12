@@ -191,7 +191,7 @@ function draw(){
   //enemy.move();
   ctx.drawImage(bgImg,0,0);
   //ctx.drawImage(chaImg,Jason.x,Jason.y);
-  //ctx.drawImage(enemyImg,enemy.x,enemy.y);
+  ctx.drawImage(enemyImg,enemy.x,enemy.y);
   ctx.drawImage(btnImg,btn.x,btn.y,50,50);
   if(isBuilding){
     ctx.drawImage(twrImg,cursor.x,cursor.y,32,32);
