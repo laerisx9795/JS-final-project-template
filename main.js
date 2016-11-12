@@ -54,9 +54,9 @@ var enemyPath=[
 ];
 
 var FPS=60;
-var enemy={
+/*var enemy={
   x:96,
-  y:450,
+  y:480-32,
   speedx:0 ,  //設定速度
   speedy:-64 ,
   speed : 64,
@@ -87,7 +87,44 @@ var enemy={
           this.x=this.x+this.speedx/FPS;
           this.y=this.y+this.speedy/FPS;  //speedy/FPS 速度/每秒改變張數 每秒改變距離
         }
+};*/
+
+function Enemy(){
+  this.x=96,
+  this.y=y:480-32,
+  this.speedx:0 ,  //設定速度
+  this.speedy:-64 ,
+  this.speed : 64,
+  this.pathDes: 0,
+  this.move: function(){
+          if(isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,this.speed/FPS,this.speed/FPS)){
+            //          目標路徑點.x              ,目標路徑點.y              ,現在.x, 現在.y,偵測範圍大小  ,偵測範圍大小
+            //console.log("true")
+            //把史萊姆移到目標路徑點上 改變speedx和speedy 行進方向 以及下一個目標路徑點
+            this.x=enemyPath[this.pathDes].x;
+            this.y=enemyPath[this.pathDes].y;
+            this.pathDes++;
+            enemyPath[this.pathDes];
+            if(this.x>enemyPath[this.pathDes].x){
+              this.speedx = -64;
+              this.speedy = 0;
+            }else if(this.x<enemyPath[this.pathDes].x){
+              this.speedx = 64;
+              this.speedy = 0;
+            }else if(this.y>enemyPath[this.pathDes].y){
+              this.speedx = 0;
+              this.speedy = -64;
+            }else{
+              this.speedx = 0;
+              this.speedy = 64;
+            }
+          }
+          this.x=this.x+this.speedx/FPS;
+          this.y=this.y+this.speedy/FPS;  //speedy/FPS 速度/每秒改變張數 每秒改變距離
+        }
 };
+
+var enemy=new Enemy();
 
 var btn={
   x:590,
