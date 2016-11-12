@@ -90,13 +90,13 @@ var FPS=60;
 };*/
 
 function Enemy(){
-  this.x=96,
-  this.y=y:480-32,
-  this.speedx:0 ,  //設定速度
-  this.speedy:-64 ,
-  this.speed : 64,
-  this.pathDes: 0,
-  this.move: function(){
+  this.x=96;
+  this.y=480-32;
+  this.speedx=0 ;  //設定速度
+  this.speedy=-64 ;
+  this.speed = 64;
+  this.pathDes= 0;
+  this.move= function(){
           if(isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,this.speed/FPS,this.speed/FPS)){
             //          目標路徑點.x              ,目標路徑點.y              ,現在.x, 現在.y,偵測範圍大小  ,偵測範圍大小
             //console.log("true")
