@@ -123,8 +123,19 @@ function Enemy(){
           this.y=this.y+this.speedy/FPS;  //speedy/FPS 速度/每秒改變張數 每秒改變距離
         }
 }
+//var enemy=new Enemy();
+var enemies =[];
 
-var enemy=new Enemy();
+//紀錄遊戲時間
+var clock=0;
+
+//每80個"遊戲時間"產生一個敵人
+//可以用prompt改變遊戲難度(幾個遊戲時間產生一個敵人)
+if((clock%80)==0){
+  var newEnemy = new Enemy();
+  enemies.push(newEnemy);
+}
+
 
 var btn={
   x:590,
@@ -174,6 +185,7 @@ function draw(){
     ctx.drawImage(twrImg,cursor.x,cursor.y,32,32);
   }
     ctx.drawImage(twrImg,tower.x,tower.y,32,32);
+  clock++;
 }
 
 setInterval(draw,16);
