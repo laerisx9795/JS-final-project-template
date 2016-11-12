@@ -99,7 +99,7 @@ function Enemy(){
   this.move= function(){
           if(isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,this.speed/FPS,this.speed/FPS)){
             //          目標路徑點.x              ,目標路徑點.y              ,現在.x, 現在.y,偵測範圍大小  ,偵測範圍大小
-            //console.log("true")
+            console.log("true")
             //把史萊姆移到目標路徑點上 改變speedx和speedy 行進方向 以及下一個目標路徑點
             this.x=enemyPath[this.pathDes].x;
             this.y=enemyPath[this.pathDes].y;
