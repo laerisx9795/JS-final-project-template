@@ -178,16 +178,20 @@ $("#game-canvas").on("click", function(){
 
 function draw(){
   //每80個"遊戲時間"產生一個敵人
-  //可以用prompt改變遊戲難度(幾個遊戲時間產生一個敵人)
+  //可以用prompt改變遊戲難度(多少遊戲時間產生一個敵人)
   if(clock%80==0){
     var newEnemy = new Enemy();
     enemies.push(newEnemy);
     console.log(clock);
   }
-  enemy.move();
+  for( var i = 0; i < enemies.length; i++ ){
+    enemy.move();
+    ctx.drawImage(enemyImg,enemies[i].x,enemies[i].y);
+  }
+  //enemy.move();
   ctx.drawImage(bgImg,0,0);
   //ctx.drawImage(chaImg,Jason.x,Jason.y);
-  ctx.drawImage(enemyImg,enemy.x,enemy.y);
+  //ctx.drawImage(enemyImg,enemy.x,enemy.y);
   ctx.drawImage(btnImg,btn.x,btn.y,50,50);
   if(isBuilding){
     ctx.drawImage(twrImg,cursor.x,cursor.y,32,32);
