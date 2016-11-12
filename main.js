@@ -187,9 +187,9 @@ function draw(){
   for(var i=0;i<enemies.length;i++){
     enemies[i].move();
     ctx.drawImage(enemyImg,enemies[i].x,enemies[i].y);
-    console.log("true");
+    //console.log("true");
   }
-  //enemy.move();
+  enemy.move();
   ctx.drawImage(bgImg,0,0);
   //ctx.drawImage(chaImg,Jason.x,Jason.y);
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
