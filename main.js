@@ -180,7 +180,7 @@ function draw(){
   ctx.drawImage(bgImg,0,0);
   //每80個"遊戲時間"產生一個敵人
   //可以用prompt改變遊戲難度(多少遊戲時間產生一個敵人)
-  if(clock%80==0){
+  /*if(clock%80==0){
     var newEnemy = new Enemy();
     enemies.push(newEnemy);
     console.log(clock);
@@ -189,7 +189,7 @@ function draw(){
     enemies[i].move();
     ctx.drawImage(enemyImg,enemies[i].x,enemies[i].y);
     //console.log("true");
-  }
+  }*/
   enemy.move();
   //ctx.drawImage(chaImg,Jason.x,Jason.y);
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
