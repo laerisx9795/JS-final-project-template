@@ -190,7 +190,7 @@ function draw(){
     ctx.drawImage(enemyImg,enemies[i].x,enemies[i].y);
     //console.log("true");
   }*/
-  enemy.move();
+  //enemy.move();
   //ctx.drawImage(chaImg,Jason.x,Jason.y);
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
   ctx.drawImage(btnImg,btn.x,btn.y,50,50);
