@@ -249,7 +249,8 @@ function draw(){
   ctx.drawImage(twrImg,tower.x,tower.y,32,32);
   tower.searchEnemy();
   if(tower.aimingEnemyId != null){
-    ctx.drawImage(targetImg,enemies[i].x,enemies[i].y);
+    //ctx.drawImage(targetImg,enemies[i].x,enemies[i].y);
+    console.log("true");
   }
   clock++;
 }
