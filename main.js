@@ -183,7 +183,7 @@ $("#game-canvas").on("click", function(){
 
 function draw(){
   ctx.drawImage(bgImg,0,0);
-  ctx.fillText(hp,100,100);
+  ctx.fillText("HP:"+hp,64,64);
   ctx.font="24px Arial";
   ctx.fillStyle="White";
   //每80個"遊戲時間"產生一個敵人
