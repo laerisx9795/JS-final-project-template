@@ -211,13 +211,12 @@ function draw(){
       enemies[i].hp=0;
       hp = hp - 10;
     }*/
-    if(enemies[i].hp<=0){ //敵人的生命值如果歸零 就刪掉敵人 並且將生命樹hp-10
+    if(enemies[i].hp<=0){ //敵人的生命值如果歸零 就刪掉敵人
       enemies.splice(i,1);
-    }else{
+    }
       enemies[i].move();
       ctx.drawImage(enemyImg,enemies[i].x,enemies[i].y);
     //console.log("true");
-    }
   }
   enemy.move();
   //ctx.drawImage(chaImg,Jason.x,Jason.y);
