@@ -197,12 +197,12 @@ function draw(){
     //console.log(clock);
   }
   for(var i=0;i<enemies.length;i++){
-    if(enemise[i].x=64,enemise[i].y=128){
-      enemise[i].hp=0;
+    if(enemies[i].x=64,enemies[i].y=128){
+      enemies[i].hp=0;
       hp = hp - 10;
     }
-    if(enemise[i].hp<=0){ //敵人的生命值如果歸零 就刪掉敵人 並且將生命樹hp-10
-      enemise.splice(i,1);
+    if(enemies[i].hp<=0){ //敵人的生命值如果歸零 就刪掉敵人 並且將生命樹hp-10
+      enemies.splice(i,1);
     }else{
       enemies[i].move();
       ctx.drawImage(enemyImg,enemies[i].x,enemies[i].y);
