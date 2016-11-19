@@ -57,7 +57,7 @@ var enemyPath=[
   {x:224,y:192},
   {x:224,y:64},
   {x:64,y:64},
-  {x:64,y:96}
+  {x:64,y:128}
 ];
 
 var FPS=60;
@@ -103,6 +103,7 @@ function Enemy(){
   this.speedy=-64 ;
   this.speed = 64;
   this.pathDes= 0;
+  this.hp = 50;
   this.move= function(){
           if(isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,this.speed/FPS,this.speed/FPS)){
             //          目標路徑點.x              ,目標路徑點.y              ,現在.x, 現在.y,偵測範圍大小  ,偵測範圍大小
@@ -196,9 +197,17 @@ function draw(){
     //console.log(clock);
   }
   for(var i=0;i<enemies.length;i++){
-    enemies[i].move();
-    ctx.drawImage(enemyImg,enemies[i].x,enemies[i].y);
+    if(enemise[i].x=64,enemise[i].y=128){
+      enemise[i].hp=0;
+      hp = hp - 10;
+    }
+    if(enemise[i].hp<=0){ //敵人的生命值如果歸零 就刪掉敵人 並且將生命樹hp-10
+      enemise.splice(i,1);
+    }else{
+      enemies[i].move();
+      ctx.drawImage(enemyImg,enemies[i].x,enemies[i].y);
     //console.log("true");
+    }
   }
   enemy.move();
   //ctx.drawImage(chaImg,Jason.x,Jason.y);
