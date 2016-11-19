@@ -251,7 +251,7 @@ function draw(){
   ctx.drawImage(twrImg,tower.x,tower.y,32,32);
   tower.searchEnemy();
   if(tower.aimingEnemyId != null){
-    var id = tower.aimingEnemyId;
+    //var id = tower.aimingEnemyId;
     //ctx.drawImage(targetImg,enemies[i].x,enemies[i].y);
     console.log("true");
   }
@@ -271,4 +271,6 @@ if(this.pathDes === enemyPath.length-1){
 執行了兩次
 */
 //無法取得塔的座標
-//
+//無法取得距離
+//無法改變aimingEnemyId
+//無法判斷aimingEnemyId之值
