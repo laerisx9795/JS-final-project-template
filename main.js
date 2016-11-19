@@ -189,10 +189,10 @@ var tower = {
   searchEnemy:function(){
               for(var i=0; i<enemies.lenth; i++){
                 var distance = Math.sqrt(Math,pow(this.x-enemies[i].x,2) + Math.pow(this.y-enemies[i].y,2));
+                console.log(this.x+","+this.y);
+                console.log(distance);
                 if(distance<=this.range){
                   this.aimingEnemyId = i;
-                  console.log(this.x+","+this.y);
-                  console.log(distance);
                   console.log(this.aimingEnemyId);
                   return;
                 }
@@ -270,4 +270,5 @@ if(this.pathDes === enemyPath.length-1){
 }
 執行了兩次
 */
+//無法取得塔的座標
 //
