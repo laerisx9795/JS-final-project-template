@@ -213,7 +213,7 @@ function draw(){
     }*/
     if(enemies[i].hp<=0){ //敵人的生命值如果歸零 就刪掉敵人
       enemies.splice(i,1);
-      console.log("true");
+      console.log(enemies[0].x,enemies[0].y);
     }
       enemies[i].move();
       ctx.drawImage(enemyImg,enemies[i].x,enemies[i].y);
