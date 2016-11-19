@@ -187,7 +187,7 @@ var tower = {
               for(var i=0; i<enemies.lenth; i++){
                 var distance = Math.sqrt(Math,pow(this.x-enemies[i].x,2) + Math.pow(this.y-enemies[i].y,2));
                 if(distance<=this.range){
-                  aimingEnemyId = i;
+                  this.aimingEnemyId = i;
                   console.log(aimingEnemyId);
                   return;
                 }
