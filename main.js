@@ -44,13 +44,13 @@ twrImg.src="images/tower.png";
 
 
 var enemyPath=[
-  {x:96,y:64},
-  {x:384,y:64},
-  {x:384,y:192},
+  {x:128,y:384},
+  {x:512,y:384},
+  {x:512,y:192},
   {x:224,y:192},
-  {x:224,y:320},
-  {x:544,y:320},
-  {x:544,y:96}
+  {x:224,y:64},
+  {x:64,y:64},
+  {x:64,y:96}
 ];
 
 var FPS=60;
@@ -90,7 +90,7 @@ var FPS=60;
 };*/
 
 function Enemy(){
-  this.x=96;
+  this.x=128;
   this.y=480-32;
   this.speedx=0 ;  //設定速度
   this.speedy=-64 ;
@@ -180,17 +180,17 @@ function draw(){
   ctx.drawImage(bgImg,0,0);
   //每80個"遊戲時間"產生一個敵人
   //可以用prompt改變遊戲難度(多少遊戲時間產生一個敵人)
-  /*if(clock%80==0){
+  if(clock%80==0){
     var newEnemy = new Enemy();
     enemies.push(newEnemy);
-    console.log(clock);
+    //console.log(clock);
   }
   for(var i=0;i<enemies.length;i++){
     enemies[i].move();
     ctx.drawImage(enemyImg,enemies[i].x,enemies[i].y);
     //console.log("true");
-  }*/
-  //enemy.move();
+  }
+  enemy.move();
   //ctx.drawImage(chaImg,Jason.x,Jason.y);
   ctx.drawImage(enemyImg,enemy.x,enemy.y);
   ctx.drawImage(btnImg,btn.x,btn.y,50,50);
