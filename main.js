@@ -29,6 +29,9 @@ setInterval(draw2,16);
 var enemyImg = document.createElement("img");
 enemyImg.src="images/slime.gif";
 
+var targetImg = document.createElement("img");
+targetImg.src="images/crosshair.png";
+
 /*var canvasEnemy = document.getElementById("enemy");
 var ctx = canvasEnemy.getContext("2d");
 */
@@ -237,13 +240,16 @@ function draw(){
   }
   enemy.move();
   //ctx.drawImage(chaImg,Jason.x,Jason.y);
-  //如果無註解掉 第一隻史萊姆不會被刪除
+  //如果不註解掉 第一隻史萊姆不會被刪除
   //ctx.drawImage(enemyImg,enemy.x,enemy.y);
   ctx.drawImage(btnImg,btn.x,btn.y,50,50);
   if(isBuilding){
     ctx.drawImage(twrImg,cursor.x,cursor.y,32,32);
   }
-    ctx.drawImage(twrImg,tower.x,tower.y,32,32);
+  ctx.drawImage(twrImg,tower.x,tower.y,32,32);
+  if(aimingEnemyId != null){
+    ctx.drawImage(targetImg,enemies[i].x,enemies[i].y);
+  }
   clock++;
 }
 
@@ -259,3 +265,4 @@ if(this.pathDes === enemyPath.length-1){
 }
 執行了兩次
 */
+//
