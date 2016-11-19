@@ -252,7 +252,7 @@ function draw(){
   tower.searchEnemy();
   if(tower.aimingEnemyId != null){
     var id = tower.aimingEnemyId;
-    ctx.drawImage(targetImg,enemies[i].x,enemies[i].y);
+    ctx.drawImage(targetImg,enemies[id].x,enemies[id].y);
     //console.log("true");
   }
   clock++;
