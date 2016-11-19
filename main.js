@@ -1,4 +1,4 @@
-var gameSpeed = 150;
+var gameSpeed = 120;
 //var gameSpeed = prompt("輸入敵人刷新速率");
 
 var bgImg = document.createElement("img");
@@ -107,7 +107,7 @@ function Enemy(){
   this.hp = 50;
   this.move= function(){
           if(isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,this.speed/FPS,this.speed/FPS)){
-            if(this.pathDes == enemyPath.length-1){
+            if(this.pathDes === enemyPath.length-1){
               this.hp=0;
               treeHp -= 10;
               console.log("true");
