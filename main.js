@@ -110,7 +110,7 @@ function Enemy(){
             if(this.pathDes === enemyPath.length-1){
               this.hp=0;
               treeHp -= 10;
-              console.log("true");
+              //console.log("true");
             }else{
               //          目標路徑點.x              ,目標路徑點.y              ,現在.x, 現在.y,偵測範圍大小  ,偵測範圍大小
               //console.log("true")
