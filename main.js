@@ -183,16 +183,16 @@ var isBuilding = false;
 var tower = {
   range:96,
   aimingEnemyId:null,
-  searhEnemy:function(){
-              for(var z=0; z<enemies.lenth; z++){
-                var distance = Math.sqrt(Math,pow(this.x-enemies[z].x,2)+Math.pow(this.y-enemies[z].y,2));
+  searchEnemy:function(){
+              for(var i=0; i<enemies.lenth; i++){
+                var distance = Math.sqrt(Math,pow(this.x-enemies[i].x,2) + Math.pow(this.y-enemies[i].y,2));
                 if(distance<=this.range){
-                  aimingEnemyId = z;
+                  aimingEnemyId = i;
                   console.log(aimingEnemyId);
                   return;
                 }
               }
-              this.aimigEnemyId = null;
+              this.aimingEnemyId = null;
              }
 };
 var cursor = {};
