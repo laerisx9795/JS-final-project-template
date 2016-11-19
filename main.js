@@ -5,7 +5,7 @@ var bgImg = document.createElement("img");
 bgImg.src="images/102101.png";
 
 //HP
-var hp = 100;
+var treeHp = 100;
 //ctx.font="24px Arial";
 //ctx.fillStyle="White";
 
@@ -109,7 +109,7 @@ function Enemy(){
           if(isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,this.speed/FPS,this.speed/FPS)){
             if(this.pathDes == enemyPath.length-1){
               this.hp=0;
-              hp -= 10;
+              treeHp -= 10;
             }else{
               //          目標路徑點.x              ,目標路徑點.y              ,現在.x, 現在.y,偵測範圍大小  ,偵測範圍大小
               //console.log("true")
@@ -196,7 +196,7 @@ $("#game-canvas").on("click", function(){
 
 function draw(){
   ctx.drawImage(bgImg,0,0);
-  ctx.fillText("HP:"+hp,20,20);
+  ctx.fillText("HP:"+treeHp,20,20);
   ctx.font="22px Arial";
   ctx.fillStyle="white";
   //每80個"遊戲時間"產生一個敵人
@@ -221,6 +221,7 @@ function draw(){
   }
   enemy.move();
   //ctx.drawImage(chaImg,Jason.x,Jason.y);
+  //如果無註解掉 第一隻史萊姆不會被刪除
   //ctx.drawImage(enemyImg,enemy.x,enemy.y);
   ctx.drawImage(btnImg,btn.x,btn.y,50,50);
   if(isBuilding){
@@ -234,5 +235,5 @@ setInterval(draw,16);
 
 
 /*
-
+//第一隻史萊姆刪除後 treeHp-20
 */
