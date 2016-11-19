@@ -1,4 +1,4 @@
-var gameSpeed = 120;
+var gameSpeed = 80;
 //var gameSpeed = prompt("輸入敵人刷新速率");
 
 var bgImg = document.createElement("img");
