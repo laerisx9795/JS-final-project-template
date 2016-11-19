@@ -107,7 +107,7 @@ function Enemy(){
   this.hp = 50;
   this.move= function(){
           if(isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,this.speed/FPS,this.speed/FPS)){
-            if(this.pathDes == enemyPathi.length-1){
+            if(this.pathDes == enemyPath.length-1){
               this.hp=0;
               hp -= 10;
             }else{
