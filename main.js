@@ -157,6 +157,7 @@ if((clock%80)==0){
 }*/
 
 
+
 var btn={
   x:590,
   y:430
@@ -179,7 +180,21 @@ function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight)
 }
 
 var isBuilding = false;
-var tower = {};
+var tower = {
+  range:96,
+  aimingEnemyId:null,
+  searhEnemy:function(){
+              for(var z=0; z<enemies.lenth; z++){
+                var distance = Math.sqrt(Math,pow(this.x-enemies[z].x,2)+Math.pow(this.y-enemies[z].y,2));
+                if(distance<=this.range){
+                  aimingEnemyId = z;
+                  console.log(aimingEnemyId);
+                  return;
+                }
+              }
+              this.aimigEnemyId = null;
+             }
+};
 var cursor = {};
 $("#game-canvas").on("click", function(){
   if(isCollided(cursor.x, cursor.y, 590, 430, 50, 50)){ //判斷點擊位置是否在按鈕內
