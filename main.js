@@ -189,11 +189,11 @@ var tower = {
   searchEnemy:function(){
               for(var i=0; i<enemies.length; i++){
                 var distance = Math.sqrt(Math.pow(this.x-enemies[i].x,2) + Math.pow(this.y-enemies[i].y,2));
-                console.log(this.x+","+this.y);
-                console.log(distance);
+                //console.log(this.x+","+this.y);
+                //console.log(distance);
                 if(distance<=this.range){
                   this.aimingEnemyId = i;
-                  console.log(this.aimingEnemyId);
+                  //console.log(this.aimingEnemyId);
                   return;
                 }
               }
@@ -251,9 +251,9 @@ function draw(){
   ctx.drawImage(twrImg,tower.x,tower.y,32,32);
   tower.searchEnemy();
   if(tower.aimingEnemyId != null){
-    //var id = tower.aimingEnemyId;
-    //ctx.drawImage(targetImg,enemies[i].x,enemies[i].y);
-    console.log("true");
+    var id = tower.aimingEnemyId;
+    ctx.drawImage(targetImg,enemies[i].x,enemies[i].y);
+    //console.log("true");
   }
   clock++;
 }
