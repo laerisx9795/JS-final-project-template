@@ -1,3 +1,5 @@
+var gameSpeed = prompt("輸入敵人刷新速率");
+
 var bgImg = document.createElement("img");
 bgImg.src="images/102101.png";
 
@@ -188,7 +190,7 @@ function draw(){
   ctx.fillStyle="white";
   //每80個"遊戲時間"產生一個敵人
   //可以用prompt改變遊戲難度(多少遊戲時間產生一個敵人)
-  if(clock%80==0){
+  if(clock%gameSpeed==0){
     var newEnemy = new Enemy();
     enemies.push(newEnemy);
     //console.log(clock);
