@@ -236,5 +236,11 @@ setInterval(draw,16);
 
 
 /*
-//第一隻史萊姆刪除後 treeHp-20
+第一隻史萊姆刪除後 treeHp-20
+if(this.pathDes === enemyPath.length-1){
+  this.hp=0;
+  treeHp -= 10;
+  console.log("true");
+}
+執行了兩次
 */
