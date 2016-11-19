@@ -1,6 +1,11 @@
 var bgImg = document.createElement("img");
 bgImg.src="images/102101.png";
 
+//HP
+var hp = 100;
+ctx.font="24px Arial";
+ctx.fillStyle="White";
+
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
 
@@ -178,6 +183,7 @@ $("#game-canvas").on("click", function(){
 
 function draw(){
   ctx.drawImage(bgImg,0,0);
+  ctx.fillText(hp,100,100);
   //每80個"遊戲時間"產生一個敵人
   //可以用prompt改變遊戲難度(多少遊戲時間產生一個敵人)
   if(clock%80==0){
