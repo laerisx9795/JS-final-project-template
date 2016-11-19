@@ -129,6 +129,9 @@ function Enemy(){
           }
           this.x=this.x+this.speedx/FPS;
           this.y=this.y+this.speedy/FPS;  //speedy/FPS 速度/每秒改變張數 每秒改變距離
+          if(this.x=enemyPath[6].x,this.y=enemyPath[6].y){
+            this.hp = 0;
+          }
         }
 }
 var enemy=new Enemy();
@@ -197,10 +200,10 @@ function draw(){
     //console.log(clock);
   }
   for(var i=0;i<enemies.length;i++){
-    if(enemies[i].x=64,enemies[i].y=128){
+    /*if(enemies[i].x=64,enemies[i].y=128){
       enemies[i].hp=0;
       hp = hp - 10;
-    }
+    }*/
     if(enemies[i].hp<=0){ //敵人的生命值如果歸零 就刪掉敵人 並且將生命樹hp-10
       enemies.splice(i,1);
     }else{
