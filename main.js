@@ -189,7 +189,7 @@ var tower = {
   shoot:function(){
         ctx.beginPath(); //開始畫線
         ctx.moveTo(this.x,this.y);
-        ctx.lineTo(enemies[i].x,enemies[i].y);
+        ctx.lineTo(enemies[this.aimingEnemyId].x,enemies[this.aimingEnemyId].y);
         ctx.strokeStyle='yellow';
         ctx.lineWidth=3;
         ctx.stroke();
