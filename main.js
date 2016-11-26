@@ -257,7 +257,7 @@ function tower(x,y){
                      };
 };
 
-var towerBliud =new tower();
+var towerBuild =new tower();
 var Towers =[];
 
 var cursor = {};
@@ -269,7 +269,7 @@ $("#game-canvas").on("click", function(){
       isBuilding=true;
     }
   }else if(isBuilding==true && Money>=25){ //點擊位置不在按鈕內 建造
-      Towers.push(new tower(cursor.x-cursor.x%32 , cursor.y-cursor.y%32));
+      Towers.push(towerBuild(cursor.x-cursor.x%32 , cursor.y-cursor.y%32));
       Money -= 25;
       isBuilding=false;
   }
@@ -328,13 +328,4 @@ function draw(){
 
 setInterval(draw,16);
 
-
-/*
-第一隻史萊姆刪除後 treeHp-20
-if(this.pathDes === enemyPath.length-1){
-  ...
-}
-執行了兩次
-
-即使第一隻史萊姆沒有抵達終點
-treeHp依然-10*/
+//塔從物件轉為工廠 無法建造塔
