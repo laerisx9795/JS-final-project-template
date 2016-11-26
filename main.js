@@ -257,8 +257,8 @@ function tower(x,y){
                      };
 };
 
-var tower=new tower();
-var Tower =[];
+var towerBliud =new tower();
+var Towers =[];
 
 var cursor = {};
 $("#game-canvas").on("click", function(){
@@ -269,7 +269,7 @@ $("#game-canvas").on("click", function(){
       isBuilding=true;
     }
   }else if(isBuilding==true && Money>=25){ //點擊位置不在按鈕內 建造
-      Tower.push(new tower(cursor.x-cursor.x%32 , cursor.y-cursor.y%32));
+      Towers.push(new towerBliud(cursor.x-cursor.x%32 , cursor.y-cursor.y%32));
       Money -= 25;
       isBuilding=false;
   }
@@ -313,12 +313,12 @@ function draw(){
   ctx.drawImage(btnImg,btn.x,btn.y,50,50);
   for(var z=0; z<Tower.length; z++){
     ctx.drawImage(twrImg,tower.x,tower.y,32,32);
-    Tower[z].searchEnemy();
+    Towers[z].searchEnemy();
     if(isBuilding){
       ctx.drawImage(twrImg,cursor.x,cursor.y,32,32);
     }
-    if(Tower[z].aimingEnemyId != null){
-      var id = Tower[z].aimingEnemyId;
+    if(Towers[z].aimingEnemyId != null){
+      var id = Towers[z].aimingEnemyId;
       ctx.drawImage(targetImg,enemies[id].x,enemies[id].y);
       //console.log("true");
     }
