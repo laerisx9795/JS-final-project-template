@@ -107,7 +107,7 @@ function Enemy(){
   this.speedy=-64 ;
   this.speed = 64;
   this.pathDes= 0;
-  this.hp = 5;
+  this.hp = 20;
   this.move= function(){
           if(isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,this.speed/FPS,this.speed/FPS)){
             if(this.pathDes === enemyPath.length-1){
@@ -284,4 +284,6 @@ if(this.pathDes === enemyPath.length-1){
   ...
 }
 執行了兩次
-*/
+
+即使第一隻史萊姆沒有抵達終點
+treeHp依然-10*/
