@@ -7,7 +7,7 @@ bgImg.src="images/102101.png";
 //HP
 var treeHp = 100;
 var Score = 0;
-var Money = 0;
+var Money = 50;
 //ctx.font="24px Arial";
 //ctx.fillStyle="White";
 
@@ -185,7 +185,7 @@ function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight)
 }
 
 var isBuilding = false;
-var tower = {
+/*var tower = {
   range:96,
   aimingEnemyId:null,
   shoot:function(){
@@ -218,7 +218,48 @@ var tower = {
               }
               this.aimingEnemyId = null;
              },
+};*/
+
+function tower(x,y){
+  this.x=x;
+  this.y=y;
+  this.range = 96;
+  this.aimingEnemyId = null;
+  this.shoot = function(){
+                ctx.beginPath(); //開始畫線
+                ctx.moveTo(this.x,this.y);
+                ctx.lineTo(enemies[this.aimingEnemyId].x,enemies[this.aimingEnemyId].y);
+                ctx.strokeStyle='yellow';
+                ctx.lineWidth=3;
+                ctx.stroke();
+  };
+  this.fireRate = 1;
+  this.readyToShootTime = 1;
+  this.damage = 5;
+  this.searchEnemy = function(){
+                      this.readyToShootTime -= 1/FPS;
+                      for(var i=0; i<enemies.length; i++){
+                        var distance = Math.sqrt(Math.pow(this.x-enemies[i].x,2) + Math.pow(this.y-enemies[i].y,2));
+                        //console.log(this.x+","+this.y);
+                        //console.log(distance);
+                        if(distance<=this.range){
+                          this.aimingEnemyId = i;
+                          //console.log(this.aimingEnemyId);
+                          if(this.readyToShootTime<=0){
+                            this.shoot(this.aimingEnemyId);
+                            this.readyToShootTime = this.fireRate;
+                            enemies[i].hp -= this.damage;
+                          }
+                          return;
+                        }
+                      }
+                      this.aimingEnemyId = null;
+                     };
 };
+
+var tower=new tower();
+var Tower =[];
+
 var cursor = {};
 $("#game-canvas").on("click", function(){
   if(isCollided(cursor.x, cursor.y, 590, 430, 50, 50)){ //判斷點擊位置是否在按鈕內
@@ -227,9 +268,9 @@ $("#game-canvas").on("click", function(){
     }else{
       isBuilding=true;
     }
-  }else if(isBuilding==true){
-      tower.x=cursor.x-cursor.x%32;
-      tower.y=cursor.y-cursor.y%32;
+  }else if(isBuilding==true && Money>=25){ //點擊位置不在按鈕內 建造
+      Tower.push(new tower(cursor.x-cursor.x%32 , cursor.y-cursor.y%32));
+      Money -= 25;
       isBuilding=false;
   }
 });
@@ -256,7 +297,7 @@ function draw(){
     if(enemies[i].hp<=0){ //敵人的生命值如果歸零 就刪掉敵人
        if(enemies[i].pathDes != enemyPath.length-1){
         Score += 10;
-        Money += 5;
+        Money += 8;
       }
       enemies.splice(i,1);
       //console.log(enemies[0].x,enemies[0].y);
@@ -270,15 +311,17 @@ function draw(){
   //如果不註解掉 第一隻史萊姆不會被刪除
   //ctx.drawImage(enemyImg,enemy.x,enemy.y);
   ctx.drawImage(btnImg,btn.x,btn.y,50,50);
-  if(isBuilding){
-    ctx.drawImage(twrImg,cursor.x,cursor.y,32,32);
-  }
-  ctx.drawImage(twrImg,tower.x,tower.y,32,32);
-  tower.searchEnemy();
-  if(tower.aimingEnemyId != null){
-    var id = tower.aimingEnemyId;
-    ctx.drawImage(targetImg,enemies[id].x,enemies[id].y);
-    //console.log("true");
+  for(var z=0; z<Tower.length; z++){
+    ctx.drawImage(twrImg,tower.x,tower.y,32,32);
+    Tower[z].searchEnemy();
+    if(isBuilding){
+      ctx.drawImage(twrImg,cursor.x,cursor.y,32,32);
+    }
+    if(Tower[z].aimingEnemyId != null){
+      var id = Tower[z].aimingEnemyId;
+      ctx.drawImage(targetImg,enemies[id].x,enemies[id].y);
+      //console.log("true");
+    }
   }
   clock++;
 }
