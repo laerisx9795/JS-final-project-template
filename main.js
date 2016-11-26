@@ -109,7 +109,7 @@ function Enemy(){
   this.speedy=-64 ;
   this.speed = 64;
   this.pathDes= 0;
-  this.hp = 20;
+  this.hp = 5;
   this.move= function(){
           if(isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,this.speed/FPS,this.speed/FPS)){
             if(this.pathDes === enemyPath.length-1){
@@ -256,8 +256,10 @@ function draw(){
     if(enemies[i].hp<=0){ //敵人的生命值如果歸零 就刪掉敵人
       enemies.splice(i,1);
       //console.log(enemies[0].x,enemies[0].y);
-      Score += 10;
-      Money += 5;
+      if(!(enemies[i].pathDes === enemyPath.length-1)){
+        Score += 10;
+        Money += 5;
+      }
     }
       enemies[i].move();
       ctx.drawImage(enemyImg,enemies[i].x,enemies[i].y);
