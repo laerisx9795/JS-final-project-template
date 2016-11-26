@@ -6,6 +6,8 @@ bgImg.src="images/102101.png";
 
 //HP
 var treeHp = 100;
+var Score = 0;
+var Money = 0;
 //ctx.font="24px Arial";
 //ctx.fillStyle="White";
 
@@ -235,6 +237,8 @@ $("#game-canvas").on("click", function(){
 function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.fillText("HP:"+treeHp,20,20);
+  ctx.fillText("Score:"+Score,20,42);
+  ctx.fillText("Money:"+Money,20,64);
   ctx.font="22px Arial";
   ctx.fillStyle="white";
   //每80個"遊戲時間"產生一個敵人
@@ -252,6 +256,8 @@ function draw(){
     if(enemies[i].hp<=0){ //敵人的生命值如果歸零 就刪掉敵人
       enemies.splice(i,1);
       //console.log(enemies[0].x,enemies[0].y);
+      Score += 10;
+      Money += 5;
     }
       enemies[i].move();
       ctx.drawImage(enemyImg,enemies[i].x,enemies[i].y);
