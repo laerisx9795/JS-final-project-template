@@ -257,7 +257,7 @@ function draw(){
       ctx.drawImage(enemyImg,enemies[i].x,enemies[i].y);
     //console.log("true");
   }
-  enemy.move();
+  //enemy.move();
   //ctx.drawImage(chaImg,Jason.x,Jason.y);
   //如果不註解掉 第一隻史萊姆不會被刪除
   //ctx.drawImage(enemyImg,enemy.x,enemy.y);
