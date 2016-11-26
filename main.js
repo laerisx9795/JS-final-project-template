@@ -186,7 +186,19 @@ var isBuilding = false;
 var tower = {
   range:96,
   aimingEnemyId:null,
+  shoot:function(this.aimingEnemyId){
+        ctx.beginPath(); //開始畫線
+        ctx.moveTo(this.x,this.y);
+        ctx.lineTo(enemies[i].x,enemies[i].y);
+        ctx.strokeStyle='yellow';
+        ctx.lineWidth=3;
+        ctx.stroke();
+  },
+  fireRate:1,
+  readyToShootTime:1,
+  damage:5,
   searchEnemy:function(){
+              this.readyToShootTime -= 1/FPS;
               for(var i=0; i<enemies.length; i++){
                 var distance = Math.sqrt(Math.pow(this.x-enemies[i].x,2) + Math.pow(this.y-enemies[i].y,2));
                 //console.log(this.x+","+this.y);
@@ -194,11 +206,16 @@ var tower = {
                 if(distance<=this.range){
                   this.aimingEnemyId = i;
                   //console.log(this.aimingEnemyId);
+                  if(this.readyToShootTime<=0){
+                    this.shoot();
+                    this.readyToShootTime = this.fireRate;
+                    enemies[i].hp -= this.damage;
+                  }
                   return;
                 }
               }
               this.aimingEnemyId = null;
-             }
+             },
 };
 var cursor = {};
 $("#game-canvas").on("click", function(){
@@ -270,7 +287,3 @@ if(this.pathDes === enemyPath.length-1){
 }
 執行了兩次
 */
-//無法取得塔的座標
-//無法取得距離
-//無法改變aimingEnemyId
-//無法判斷aimingEnemyId之值
