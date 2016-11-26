@@ -313,7 +313,7 @@ function draw(){
   ctx.drawImage(btnImg,btn.x,btn.y,50,50);
   for(var z=0; z<Towers.length; z++){
     //ctx.drawImage{twrImg,tower.x,tower.y,32,32};
-    ctx.drawImage(twrImg,Towers[z].x,Towers[z].y,32,32);
+    //ctx.drawImage(twrImg,Towers[z].x,Towers[z].y,32,32);
     if(isBuilding){
       //ctx.drawImage(twrImg,cursor.x,cursor.y,32,32);
       ctx.drawImage(twrImg,Towers[z].x,Towers[z].y,32,32);
