@@ -269,7 +269,7 @@ $("#game-canvas").on("click", function(){
       isBuilding=true;
     }
   }else if(isBuilding==true && Money>=25){ //點擊位置不在按鈕內 建造
-      Towers.push(new towerBliud(cursor.x-cursor.x%32 , cursor.y-cursor.y%32));
+      Towers.push(new tower(cursor.x-cursor.x%32 , cursor.y-cursor.y%32));
       Money -= 25;
       isBuilding=false;
   }
