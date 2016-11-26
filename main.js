@@ -186,7 +186,7 @@ var isBuilding = false;
 var tower = {
   range:96,
   aimingEnemyId:null,
-  shoot:function(this.aimingEnemyId){
+  shoot:function(){
         ctx.beginPath(); //開始畫線
         ctx.moveTo(this.x,this.y);
         ctx.lineTo(enemies[i].x,enemies[i].y);
@@ -207,7 +207,7 @@ var tower = {
                   this.aimingEnemyId = i;
                   //console.log(this.aimingEnemyId);
                   if(this.readyToShootTime<=0){
-                    this.shoot();
+                    this.shoot(this.aimingEnemyId);
                     this.readyToShootTime = this.fireRate;
                     enemies[i].hp -= this.damage;
                   }
