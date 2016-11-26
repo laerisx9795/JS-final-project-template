@@ -311,7 +311,7 @@ function draw(){
   //如果不註解掉 第一隻史萊姆不會被刪除
   //ctx.drawImage(enemyImg,enemy.x,enemy.y);
   ctx.drawImage(btnImg,btn.x,btn.y,50,50);
-  for(var z=0; z<Tower.length; z++){
+  for(var z=0; z<Towers.length; z++){
     ctx.drawImage(twrImg,tower.x,tower.y,32,32);
     Towers[z].searchEnemy();
     if(isBuilding){
