@@ -254,12 +254,12 @@ function draw(){
       hp = hp - 10;
     }*/
     if(enemies[i].hp<=0){ //敵人的生命值如果歸零 就刪掉敵人
-      enemies.splice(i,1);
-      //console.log(enemies[0].x,enemies[0].y);
-      if(!(enemies[i].pathDes === enemyPath.length-1)){
+       if(enemies[i].pathDes != enemyPath.length-1){
         Score += 10;
         Money += 5;
       }
+      enemies.splice(i,1);
+      //console.log(enemies[0].x,enemies[0].y);
     }
       enemies[i].move();
       ctx.drawImage(enemyImg,enemies[i].x,enemies[i].y);
