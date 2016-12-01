@@ -232,6 +232,7 @@ function tower(x,y){
                 ctx.strokeStyle='yellow';
                 ctx.lineWidth=3;
                 ctx.stroke();
+                console.log("1");
   };
   this.fireRate = 1;
   this.readyToShootTime = 1;
@@ -244,6 +245,7 @@ function tower(x,y){
                         //console.log(distance);
                         if(distance<=this.range){
                           this.aimingEnemyId = i;
+                          console.log("2");
                           //console.log(this.aimingEnemyId);
                           if(this.readyToShootTime<=0){
                             this.shoot(this.aimingEnemyId);
@@ -269,7 +271,9 @@ $("#game-canvas").on("click", function(){
       isBuilding=true;
     }
   }else if(isBuilding==true && Money>=25){ //點擊位置不在按鈕內 建造
-      Towers.push(towerBuild(cursor.x-cursor.x%32 , cursor.y-cursor.y%32));
+      var towerBuilding = new tower();
+      Towers.push(towerBuilding(cursor.x-cursor.x%32 , cursor.y-cursor.y%32));
+      console.log("3");
       Money -= 25;
       isBuilding=false;
   }
@@ -314,14 +318,17 @@ function draw(){
   for(var z=0; z<Towers.length; z++){
     //ctx.drawImage{twrImg,tower.x,tower.y,32,32};
     ctx.drawImage(twrImg,Towers[z].x,Towers[z].y,32,32);
+    console.log("4");
     if(isBuilding){
       //ctx.drawImage(twrImg,cursor.x,cursor.y,32,32);
       ctx.drawImage(twrImg,Towers[z].x,Towers[z].y,32,32);
+      console.log("5");
     }
     Towers[z].searchEnemy();
     if(Towers[z].aimingEnemyId != null){
       var id = Towers[z].aimingEnemyId;
       ctx.drawImage(targetImg,enemies[id].x,enemies[id].y);
+      console.log("6");
       //console.log("true");
     }
   }
