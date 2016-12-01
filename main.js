@@ -232,7 +232,6 @@ function tower(x,y){
                 ctx.strokeStyle='yellow';
                 ctx.lineWidth=3;
                 ctx.stroke();
-                console.log("1");
   };
   this.fireRate = 1;
   this.readyToShootTime = 1;
@@ -245,7 +244,6 @@ function tower(x,y){
                         //console.log(distance);
                         if(distance<=this.range){
                           this.aimingEnemyId = i;
-                          console.log("2");
                           //console.log(this.aimingEnemyId);
                           if(this.readyToShootTime<=0){
                             this.shoot(this.aimingEnemyId);
@@ -265,17 +263,16 @@ var Towers =[];
 var cursor = {};
 $("#game-canvas").on("click", function(){
   if(isCollided(cursor.x, cursor.y, 590, 430, 50, 50)){ //判斷點擊位置是否在按鈕內
-    if(isBuilding){
+    if(isBuilding){ //isBuilding == true  也就是已經點擊過一次 再點一次取消 沒有點擊在按鈕內
       isBuilding=false; //再點一次取消
     }else{
-      isBuilding=true;
+      isBuilding=true; //一開始isBuilding == false   所以點擊後令isBuilding == true
     }
-  }else if(isBuilding==true && Money>=25){ //點擊位置不在按鈕內 建造
+  }else if(isBuilding==true && Money>=25){ //已經點擊過第一次 且第二次點擊位置不在按鈕內 建造
       var towerBuilding = new tower();
       Towers.push(towerBuilding(cursor.x-cursor.x%32 , cursor.y-cursor.y%32));
-      console.log("3");
       Money -= 25;
-      isBuilding=false;
+      isBuilding=false;  //回復原來狀態
   }
 });
 
@@ -317,18 +314,15 @@ function draw(){
   ctx.drawImage(btnImg,btn.x,btn.y,50,50);
   for(var z=0; z<Towers.length; z++){
     //ctx.drawImage{twrImg,tower.x,tower.y,32,32};
-    ctx.drawImage(twrImg,Towers[z].x,Towers[z].y,32,32);
-    console.log("4");
-    if(isBuilding){
+    ctx.drawImage(twrImg,Towers[z].x,Towers[z].y,32,32); //畫出本來存在的塔(已建造好的)
+    if(isBuilding){ //畫出建造的塔 isBuilding == true
       //ctx.drawImage(twrImg,cursor.x,cursor.y,32,32);
       ctx.drawImage(twrImg,Towers[z].x,Towers[z].y,32,32);
-      console.log("5");
     }
     Towers[z].searchEnemy();
     if(Towers[z].aimingEnemyId != null){
       var id = Towers[z].aimingEnemyId;
       ctx.drawImage(targetImg,enemies[id].x,enemies[id].y);
-      console.log("6");
       //console.log("true");
     }
   }
@@ -337,4 +331,6 @@ function draw(){
 
 setInterval(draw,16);
 
-//塔從物件轉為工廠 無法建造塔
+//塔從物件轉為工廠(陣列) 無法建造塔
+//非語法錯誤
+//連按鈕都無法點擊
