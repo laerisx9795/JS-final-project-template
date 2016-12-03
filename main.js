@@ -290,13 +290,13 @@ function draw(){
     //console.log(clock);
   }
   if(Score>=200&&Score%200==0){
-    for(var i=0;i<50;i++){
+    for(var i=0;i<200;i++){
       gameSpeed -= 10;
       console.log("Speed");
     }
   }
   if(Score>=150&&Score%150==0){
-    for(var i=0;i<50;i++){
+    for(var i=0;i<200;i++){
       enemies.hp += 5;
       console.log("hp");
     }
