@@ -109,7 +109,7 @@ function Enemy(){
   this.speedy=-64 ;
   this.speed = 64;
   this.pathDes= 0;
-  this.hp = 5;
+  this.hp = 10;
   this.move= function(){
           if(isCollided(enemyPath[this.pathDes].x,enemyPath[this.pathDes].y,this.x,this.y,this.speed/FPS,this.speed/FPS)){
             if(this.pathDes === enemyPath.length-1){
@@ -315,7 +315,7 @@ function draw(){
     //ctx.drawImage{twrImg,tower.x,tower.y,32,32};
     ctx.drawImage(twrImg,Towers[i].x,Towers[i].y,32,32); //畫出本來存在的塔(已建造好的)
     //if(isBuilding){ //畫出建造的塔 isBuilding == true
-      //ctx.drawImage(twrImg,cursor.x,cursor.y,32,32);
+      ctx.drawImage(twrImg,cursor.x,cursor.y,32,32);
       //ctx.drawImage(twrImg,Towers[z].x,Towers[z].y,32,32);
     //}
     Towers[i].searchEnemy();
