@@ -289,14 +289,14 @@ function draw(){
     enemies.push(newEnemy);
     //console.log(clock);
   }
-  for(var i=0;treeHp>0;i++){
+  /*for(var i=0;treeHp>0;i++){
     if(Score>=150&&Score%150==0){
       enemies.hp += 5;
     }
     if(Score>=200&&Score%200==0){
       gameSpeed += 5;
     }
-  }
+  }*/
   for(var i=0;i<enemies.length;i++){
     /*if(enemies[i].x=64,enemies[i].y=128){
       enemies[i].hp=0;
