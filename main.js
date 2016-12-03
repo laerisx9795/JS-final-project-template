@@ -334,7 +334,7 @@ function draw(){
   }
   clock++;
   //gameSpeed++;
-  Time--;
+  Time -= 1/FPS;
 }
 
 var intervalID = setInterval(draw,16);
