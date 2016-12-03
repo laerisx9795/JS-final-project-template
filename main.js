@@ -257,7 +257,7 @@ function tower(x,y){
                      };
 };
 
-var towerBuild =new tower();
+//var towerBuild =new tower();
 var Towers =[];
 
 var cursor = {};
@@ -269,8 +269,7 @@ $("#game-canvas").on("click", function(){
       isBuilding=true; //一開始isBuilding == false   所以點擊後令isBuilding == true
     }
   }else if(isBuilding==true && Money>=25){ //已經點擊過第一次 且第二次點擊位置不在按鈕內 建造
-      var towerBuilding = new tower();
-      Towers.push(towerBuilding(cursor.x-cursor.x%32 , cursor.y-cursor.y%32));
+      Towers.push(new tower(cursor.x-cursor.x%32 , cursor.y-cursor.y%32));
       Money -= 25;
       isBuilding=false;  //回復原來狀態
   }
@@ -315,10 +314,10 @@ function draw(){
   for(var z=0; z<Towers.length; z++){
     //ctx.drawImage{twrImg,tower.x,tower.y,32,32};
     ctx.drawImage(twrImg,Towers[z].x,Towers[z].y,32,32); //畫出本來存在的塔(已建造好的)
-    if(isBuilding){ //畫出建造的塔 isBuilding == true
+    //if(isBuilding){ //畫出建造的塔 isBuilding == true
       //ctx.drawImage(twrImg,cursor.x,cursor.y,32,32);
-      ctx.drawImage(twrImg,Towers[z].x,Towers[z].y,32,32);
-    }
+      //ctx.drawImage(twrImg,Towers[z].x,Towers[z].y,32,32);
+    //}
     Towers[z].searchEnemy();
     if(Towers[z].aimingEnemyId != null){
       var id = Towers[z].aimingEnemyId;
