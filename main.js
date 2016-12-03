@@ -289,12 +289,12 @@ function draw(){
     enemies.push(newEnemy);
     //console.log(clock);
   }
-  if(Score>200&&Score%200==0){
+  if(Score>=200&&Score%200==0){
     for(var i=0;i<50;i++){
       gameSpeed += 5;
     }
   }
-  if(Score>150&&Score%150==0){
+  if(Score>=150&&Score%150==0){
     for(var i=0;i<50;i++){
       enemies.hp += 5;
     }
