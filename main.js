@@ -283,7 +283,7 @@ function draw(){
   ctx.fillText("HP:"+treeHp,15,20);
   ctx.fillText("Score:"+Score,15,42);
   ctx.fillText("Money:"+Money,15,64);
-  ctx.fillText("Time:"+Time,15,86);
+  ctx.fillText("Time:"+Math.floor(Time),15,86);
   ctx.font="22px Arial";
   ctx.fillStyle="white";
   //每80個"遊戲時間"產生一個敵人
@@ -337,7 +337,6 @@ function draw(){
   }
   clock++;
   Time -= 1/FPS;
-  Math.floor(Time);
 }//draw
 
 var intervalID = setInterval(draw,16);
