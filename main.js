@@ -145,6 +145,10 @@ function Enemy(){
           /*if(this.x=enemyPath[6].x,this.y=enemyPath[6].y){
             this.hp = 0;
           }*/
+          if(Score>=150&&Score%150==0){
+            this.hp += 5;
+            console.log("hp");
+          }
         }
 }
 var enemy=new Enemy();
@@ -288,18 +292,10 @@ function draw(){
     var newEnemy = new Enemy();
     enemies.push(newEnemy);
     //console.log(clock);
-  }
-  if(Score>=200&&Score%200==0){
-    for(var i=0;i<200;i++){
-      gameSpeed -= 10;
-      console.log("Speed");
-    }
-  }
-  if(Score>=150&&Score%150==0){
-    for(var i=0;i<200;i++){
-      enemies.hp += 5;
-      console.log("hp");
-    }
+  } 
+  for(var i=0;i<200,Score>=200&&Score%200==0;i++){
+    gameSpeed -= 10;
+    console.log("Speed");
   }
   for(var i=0;i<enemies.length;i++){
     /*if(enemies[i].x=64,enemies[i].y=128){
