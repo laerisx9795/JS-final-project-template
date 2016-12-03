@@ -277,9 +277,9 @@ $("#game-canvas").on("click", function(){
 
 function draw(){
   ctx.drawImage(bgImg,0,0);
-  ctx.fillText("HP:"+treeHp,20,20);
-  ctx.fillText("Score:"+Score,20,42);
-  ctx.fillText("Money:"+Money,20,64);
+  ctx.fillText("HP:"+treeHp,15,20);
+  ctx.fillText("Score:"+Score,15,42);
+  ctx.fillText("Money:"+Money,15,64);
   ctx.font="22px Arial";
   ctx.fillStyle="white";
   //每80個"遊戲時間"產生一個敵人
@@ -344,9 +344,9 @@ var intervalID = setInterval(draw,16);
 //clearInterval(intervalID);
 
 function gameOver(){
-  ctx.fillText("GAME OVER",280,200);
+  ctx.fillText("GAME OVER",270,200);
   ctx.fillText("Score:"+Score,300,300);
-  ctx.font="150px Arial";
+  ctx.font="300px Arial";
   ctx.fillStyle="white";
   clearInterval(intervalID);
 }
