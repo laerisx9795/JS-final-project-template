@@ -289,16 +289,16 @@ function draw(){
     enemies.push(newEnemy);
     //console.log(clock);
   }
-  /*if(Score>=200&&Score%200==0){
+  if(Score>=200&&Score%200==0){
     for(var i=0;i<50;i++){
-      gameSpeed += 5;
+      gameSpeed -= 10;
     }
   }
   if(Score>=150&&Score%150==0){
     for(var i=0;i<50;i++){
       enemies.hp += 5;
     }
-  }*/
+  }
   for(var i=0;i<enemies.length;i++){
     /*if(enemies[i].x=64,enemies[i].y=128){
       enemies[i].hp=0;
@@ -346,7 +346,7 @@ var intervalID = setInterval(draw,16);
 function gameOver(){
   ctx.fillText("GAME OVER",270,200);
   ctx.fillText("Score:"+Score,300,300);
-  ctx.font="5000px Arial";
+  ctx.font="100px Arial";
   ctx.fillStyle="Black";
   clearInterval(intervalID);
 }
