@@ -344,9 +344,9 @@ var intervalID = setInterval(draw,16);
 //clearInterval(intervalID);
 
 function gameOver(){
-  ctx.fillText("GAME OVER",300,200);
+  ctx.fillText("GAME OVER",280,200);
   ctx.fillText("Score:"+Score,300,300);
-  ctx.font="88px Arial";
+  ctx.font="150px Arial";
   ctx.fillStyle="white";
   clearInterval(intervalID);
 }
