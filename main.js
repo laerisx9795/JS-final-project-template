@@ -314,10 +314,10 @@ function draw(){
   for(var i=0; i<Towers.length; i++){
     //ctx.drawImage{twrImg,tower.x,tower.y,32,32};
     ctx.drawImage(twrImg,Towers[i].x,Towers[i].y,32,32); //畫出本來存在的塔(已建造好的)
-    //if(isBuilding){ //畫出建造的塔 isBuilding == true
+    if(isBuilding){ //畫出建造的塔 isBuilding == true
       ctx.drawImage(twrImg,cursor.x,cursor.y,32,32);
       //ctx.drawImage(twrImg,Towers[z].x,Towers[z].y,32,32);
-    //}
+    }
     Towers[i].searchEnemy();
     if(Towers[i].aimingEnemyId != null){
       var id = Towers[i].aimingEnemyId;
