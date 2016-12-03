@@ -311,16 +311,16 @@ function draw(){
   //如果不註解掉 第一隻史萊姆不會被刪除
   //ctx.drawImage(enemyImg,enemy.x,enemy.y);
   ctx.drawImage(btnImg,btn.x,btn.y,50,50);
-  for(var z=0; z<Towers.length; z++){
+  for(var i=0; i<Towers.length; i++){
     //ctx.drawImage{twrImg,tower.x,tower.y,32,32};
-    ctx.drawImage(twrImg,Towers[z].x,Towers[z].y,32,32); //畫出本來存在的塔(已建造好的)
+    ctx.drawImage(twrImg,Towers[i].x,Towers[i].y,32,32); //畫出本來存在的塔(已建造好的)
     //if(isBuilding){ //畫出建造的塔 isBuilding == true
       //ctx.drawImage(twrImg,cursor.x,cursor.y,32,32);
       //ctx.drawImage(twrImg,Towers[z].x,Towers[z].y,32,32);
     //}
-    Towers[z].searchEnemy();
-    if(Towers[z].aimingEnemyId != null){
-      var id = Towers[z].aimingEnemyId;
+    Towers[i].searchEnemy();
+    if(Towers[i].aimingEnemyId != null){
+      var id = Towers[i].aimingEnemyId;
       ctx.drawImage(targetImg,enemies[id].x,enemies[id].y);
       //console.log("true");
     }
