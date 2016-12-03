@@ -289,7 +289,7 @@ function draw(){
     enemies.push(newEnemy);
     //console.log(clock);
   }
-  if(Score>=200&&Score%200==0){
+  /*if(Score>=200&&Score%200==0){
     for(var i=0;i<50;i++){
       gameSpeed += 5;
     }
@@ -298,7 +298,7 @@ function draw(){
     for(var i=0;i<50;i++){
       enemies.hp += 5;
     }
-  }
+  }*/
   for(var i=0;i<enemies.length;i++){
     /*if(enemies[i].x=64,enemies[i].y=128){
       enemies[i].hp=0;
@@ -334,9 +334,21 @@ function draw(){
       //console.log("true");
     }
   }
+  if(treeHp==0){
+    gameOver();
+  }
   clock++;
 }
 
-setInterval(draw,16);
+var intervalID = setInterval(draw,16);
+//clearInterval(intervalID);
+
+function gameOver(){
+  ctx.fillText("HP:"+treeHp,200,200);
+  ctx.fillText("Score:"+Score,300,300);
+  ctx.font="44px Arial";
+  ctx.fillStyle="white";
+  clearInterval(intervalID);
+}
 
 //第一次點擊後 不會顯示塔跟隨在游標旁(第二次開始會)
