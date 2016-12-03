@@ -1,5 +1,5 @@
-//var gameSpeed = 80;
-var gameSpeed = prompt("輸入敵人刷新速率");
+var gameSpeed = 80;
+//var gameSpeed = prompt("輸入敵人刷新速率");
 //var Time = prompt("輸入遊戲時間");
 var Time = 120;
 
@@ -335,6 +335,7 @@ function draw(){
     gameClear();
   }
   clock++;
+  gameSpeed -= 5;
   Time -= 1/FPS;
 }//draw
 
