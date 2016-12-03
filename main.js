@@ -289,14 +289,6 @@ function draw(){
     enemies.push(newEnemy);
     //console.log(clock);
   }
-  /*for(var i=0;treeHp>0;i++){
-    if(Score>=150&&Score%150==0){
-      enemies.hp += 5;
-    }
-    if(Score>=200&&Score%200==0){
-      gameSpeed += 5;
-    }
-  }*/
   for(var i=0;i<enemies.length;i++){
     /*if(enemies[i].x=64,enemies[i].y=128){
       enemies[i].hp=0;
@@ -314,7 +306,7 @@ function draw(){
       ctx.drawImage(enemyImg,enemies[i].x,enemies[i].y);
     //console.log("true");
   }
-  //enemy.move();
+  //enemy.move(); //不註解掉會多扣一次
   //ctx.drawImage(chaImg,Jason.x,Jason.y);
   //如果不註解掉 第一隻史萊姆不會被刪除
   //ctx.drawImage(enemyImg,enemy.x,enemy.y);
