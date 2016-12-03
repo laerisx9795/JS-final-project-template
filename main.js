@@ -289,10 +289,6 @@ function draw(){
     enemies.push(newEnemy);
     //console.log(clock);
   } 
-  if(Score>=200&&Score%200==0){
-    gameSpeed -= 10;
-    console.log("Speed");
-  }
   for(var i=0;i<enemies.length;i++){
     /*if(enemies[i].x=64,enemies[i].y=128){
       enemies[i].hp=0;
@@ -332,6 +328,7 @@ function draw(){
     gameOver();
   }
   clock++;
+  gameSpeed++;
 }
 
 var intervalID = setInterval(draw,16);
