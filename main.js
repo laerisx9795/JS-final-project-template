@@ -1,5 +1,6 @@
 var gameSpeed = 80;
 //var gameSpeed = prompt("輸入敵人刷新速率");
+var Time = prompt("輸入遊戲時間");
 
 var bgImg = document.createElement("img");
 bgImg.src="images/102101.png";
@@ -280,6 +281,7 @@ function draw(){
   ctx.fillText("HP:"+treeHp,15,20);
   ctx.fillText("Score:"+Score,15,42);
   ctx.fillText("Money:"+Money,15,64);
+  ctx.fillText("Time:"+Time,15,86);
   ctx.font="22px Arial";
   ctx.fillStyle="white";
   //每80個"遊戲時間"產生一個敵人
@@ -327,8 +329,12 @@ function draw(){
   if(treeHp==0){
     gameOver();
   }
+  if(Time==0&&treeHp>0){
+    gameClear();
+  }
   clock++;
-  gameSpeed++;
+  //gameSpeed++;
+  Time--;
 }
 
 var intervalID = setInterval(draw,16);
@@ -336,6 +342,14 @@ var intervalID = setInterval(draw,16);
 
 function gameOver(){
   ctx.fillText("GAME OVER",270,200);
+  ctx.fillText("Score:"+Score,300,300);
+  ctx.font="100px Arial";
+  ctx.fillStyle="Black";
+  clearInterval(intervalID);
+}
+
+function gameClear(){
+  ctx.fillText("GAME CLEAR",270,200);
   ctx.fillText("Score:"+Score,300,300);
   ctx.font="100px Arial";
   ctx.fillStyle="Black";
