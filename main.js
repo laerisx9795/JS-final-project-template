@@ -292,7 +292,8 @@ function draw(){
     var newEnemy = new Enemy();
     enemies.push(newEnemy);
     //console.log(clock);
-  } 
+  }
+  
   for(var i=0;i<enemies.length;i++){
     /*if(enemies[i].x=64,enemies[i].y=128){
       enemies[i].hp=0;
@@ -335,8 +336,8 @@ function draw(){
     gameClear();
   }
   clock++;
-  gameSpeed -= 5;
   Time -= 1/FPS;
+  Math.floor(Time);
 }//draw
 
 var intervalID = setInterval(draw,16);
