@@ -336,7 +336,7 @@ function draw(){
     gameClear();
   }
   clock++;
-  Time -= 1/FPS;
+  Time -= (int)1/FPS;
   Math.floor(Time);
 }//draw
 
