@@ -1,6 +1,8 @@
-var gameSpeed = 80;
-//var gameSpeed = prompt("輸入敵人刷新速率");
-var Time = prompt("輸入遊戲時間");
+//var gameSpeed = 80;
+var gameSpeed = prompt("輸入敵人刷新速率");
+//var Time = prompt("輸入遊戲時間");
+var Time = 120;
+
 
 var bgImg = document.createElement("img");
 bgImg.src="images/102101.png";
@@ -333,9 +335,8 @@ function draw(){
     gameClear();
   }
   clock++;
-  //gameSpeed++;
   Time -= 1/FPS;
-}
+}//draw
 
 var intervalID = setInterval(draw,16);
 //clearInterval(intervalID);
