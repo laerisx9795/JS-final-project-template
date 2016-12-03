@@ -145,10 +145,6 @@ function Enemy(){
           /*if(this.x=enemyPath[6].x,this.y=enemyPath[6].y){
             this.hp = 0;
           }*/
-          if(Score>=150&&Score%150==0){
-            this.hp += 5;
-            console.log("hp");
-          }
         }
 }
 var enemy=new Enemy();
@@ -293,7 +289,7 @@ function draw(){
     enemies.push(newEnemy);
     //console.log(clock);
   } 
-  for(var i=0;i<200,Score>=200&&Score%200==0;i++){
+  if(Score>=200&&Score%200==0){
     gameSpeed -= 10;
     console.log("Speed");
   }
