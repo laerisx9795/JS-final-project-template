@@ -292,11 +292,13 @@ function draw(){
   if(Score>=200&&Score%200==0){
     for(var i=0;i<50;i++){
       gameSpeed -= 10;
+      console.log("Speed");
     }
   }
   if(Score>=150&&Score%150==0){
     for(var i=0;i<50;i++){
       enemies.hp += 5;
+      console.log("hp");
     }
   }
   for(var i=0;i<enemies.length;i++){
