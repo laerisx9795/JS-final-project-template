@@ -1,5 +1,5 @@
-var gameSpeed = 80;
-//var gameSpeed = prompt("輸入敵人刷新速率");
+//var gameSpeed = 80;
+var gameSpeed = prompt("輸入敵人刷新速率");
 //var Time = prompt("輸入遊戲時間");
 var Time = 120;
 
@@ -328,7 +328,7 @@ function draw(){
       ctx.drawImage(twrImg,cursor.x,cursor.y,32,32);
     }
     //ctx.drawImage{twrImg,tower.x,tower.y,32,32};
-    ctx.drawImage(twring,cursor.x,cursor.y,32,32);
+    //ctx.drawImage(twring,cursor.x,cursor.y,32,32);
     ctx.drawImage(twrImg,Towers[i].x,Towers[i].y,32,32); //畫出本來存在的塔(已建造好的)
     Towers[i].searchEnemy();
     if(Towers[i].aimingEnemyId != null){
@@ -375,4 +375,5 @@ function gameClear(){
 }*/
 
 //第一次點擊後 不會顯示塔跟隨在游標旁(第二次開始會)
-
+//每150 points enemies.hp +=5
+//每200 points gameSpeed -= 5
