@@ -149,12 +149,12 @@ function Enemy(){
             this.hp = 0;
           }*/
         }
-  this.levelUp = function(point,time,sp){
+  /*this.levelUp = function(point,time,sp){
                   if(point>=150&&point%150==0&&time%100==0){
                     this.hp += 5;
                     gameSpeed -= 5;
                   }
-  }
+  }*/
 }
 var enemy=new Enemy();
 var enemies =[];
@@ -314,7 +314,7 @@ function draw(){
       //console.log(enemies[0].x,enemies[0].y);
     }
     enemies[i].move();
-    enemies[i].levelUp(Score,clock,gameSpeed);
+    //enemies[i].levelUp(Score,clock,gameSpeed);
     ctx.drawImage(enemyImg,enemies[i].x,enemies[i].y);
     //console.log("true");
   }
@@ -328,6 +328,7 @@ function draw(){
       ctx.drawImage(twrImg,cursor.x,cursor.y,32,32);
     }
     //ctx.drawImage{twrImg,tower.x,tower.y,32,32};
+    ctx.drawImage(twring,cursor.x,cursor.y,32,32);
     ctx.drawImage(twrImg,Towers[i].x,Towers[i].y,32,32); //畫出本來存在的塔(已建造好的)
     Towers[i].searchEnemy();
     if(Towers[i].aimingEnemyId != null){
