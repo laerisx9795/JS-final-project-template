@@ -149,9 +149,10 @@ function Enemy(){
             this.hp = 0;
           }*/
         }
-  this.levelUp = function(point,time){
+  this.levelUp = function(point,time,sp){
                   if(point>=150&&point%150==0&&time%100==0){
                     this.hp += 5;
+                    gameSpeed -= 5;
                   }
   }
 }
@@ -313,7 +314,7 @@ function draw(){
       //console.log(enemies[0].x,enemies[0].y);
     }
     enemies[i].move();
-    enemies[i].levelUp(Score,clock);
+    enemies[i].levelUp(Score,clock,gameSpeed);
     ctx.drawImage(enemyImg,enemies[i].x,enemies[i].y);
     //console.log("true");
   }
