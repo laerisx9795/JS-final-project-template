@@ -358,9 +358,9 @@ function gameClear(){
   clearInterval(intervalID);
 }
 function levelUp(score){
-  if(score%200==0){
+  /*if(score%200==0){
     gameSpeed -= 5;
-  }
+  }*/
   if(score%150==0){
     enemies.hp += 5;
   }
