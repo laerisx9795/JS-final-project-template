@@ -294,6 +294,9 @@ function draw(){
     //console.log(clock);
   }
   //levelUp(Score);
+  if(Score>=150&&Score%150==0&&clock%100==0){
+      enemies[].hp += 5;
+  }
   for(var i=0;i<enemies.length;i++){
     /*if(enemies[i].x=64,enemies[i].y=128){
       enemies[i].hp=0;
@@ -306,9 +309,6 @@ function draw(){
       }
       enemies.splice(i,1);
       //console.log(enemies[0].x,enemies[0].y);
-    }
-    if(Score>=150&&Score%150==0&&clock%100==0){
-      enemies[i].hp += 5;
     }
     enemies[i].move();
     ctx.drawImage(enemyImg,enemies[i].x,enemies[i].y);
