@@ -293,7 +293,7 @@ function draw(){
     enemies.push(newEnemy);
     //console.log(clock);
   }
-  levelUp(Score);
+  //levelUp(Score);
   for(var i=0;i<enemies.length;i++){
     /*if(enemies[i].x=64,enemies[i].y=128){
       enemies[i].hp=0;
@@ -307,8 +307,11 @@ function draw(){
       enemies.splice(i,1);
       //console.log(enemies[0].x,enemies[0].y);
     }
-      enemies[i].move();
-      ctx.drawImage(enemyImg,enemies[i].x,enemies[i].y);
+    if(Score%150==0){
+      enemies[i].hp += 5;
+    }
+    enemies[i].move();
+    ctx.drawImage(enemyImg,enemies[i].x,enemies[i].y);
     //console.log("true");
   }
   //enemy.move(); //不註解掉會多扣一次
@@ -357,14 +360,14 @@ function gameClear(){
   ctx.fillStyle="Black";
   clearInterval(intervalID);
 }
-function levelUp(score){
-  /*if(score%200==0){
+/*function levelUp(score){
+  if(score%200==0){
     gameSpeed -= 5;
-  }*/
+  }
   if(score%150==0){
     enemies.hp += 5;
   }
-}
+}*/
 
 //第一次點擊後 不會顯示塔跟隨在游標旁(第二次開始會)
 
