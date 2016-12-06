@@ -293,7 +293,7 @@ function draw(){
     enemies.push(newEnemy);
     //console.log(clock);
   }
-  
+  levelUp(Score);
   for(var i=0;i<enemies.length;i++){
     /*if(enemies[i].x=64,enemies[i].y=128){
       enemies[i].hp=0;
@@ -356,6 +356,14 @@ function gameClear(){
   ctx.font="100px Arial";
   ctx.fillStyle="Black";
   clearInterval(intervalID);
+}
+function levelUp(score){
+  if(score%200==0){
+    gameSpeed -= 5;
+  }
+  if(score%150==0){
+    enemies.hp += 5;
+  }
 }
 
 //第一次點擊後 不會顯示塔跟隨在游標旁(第二次開始會)
