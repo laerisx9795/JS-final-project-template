@@ -149,6 +149,11 @@ function Enemy(){
             this.hp = 0;
           }*/
         }
+  this.levelUp = function(point,time){
+                  if(point>=150&&point%150==0&&time%100==0){
+                    this.hp += 5;
+                  }
+  }
 }
 var enemy=new Enemy();
 var enemies =[];
@@ -294,9 +299,6 @@ function draw(){
     //console.log(clock);
   }
   //levelUp(Score);
-  if(Score>=150&&Score%150==0&&clock%100==0){
-      enemies[].hp += 5;
-  }
   for(var i=0;i<enemies.length;i++){
     /*if(enemies[i].x=64,enemies[i].y=128){
       enemies[i].hp=0;
@@ -311,6 +313,7 @@ function draw(){
       //console.log(enemies[0].x,enemies[0].y);
     }
     enemies[i].move();
+    enemies[i].levelUp(Score,clock);
     ctx.drawImage(enemyImg,enemies[i].x,enemies[i].y);
     //console.log("true");
   }
