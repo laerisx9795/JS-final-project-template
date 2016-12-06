@@ -307,7 +307,7 @@ function draw(){
       enemies.splice(i,1);
       //console.log(enemies[0].x,enemies[0].y);
     }
-    if(Score%150==0){
+    if(Score>=150&&Score%150==0){
       enemies[i].hp += 5;
     }
     enemies[i].move();
